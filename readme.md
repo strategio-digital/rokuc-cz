@@ -1,4 +1,4 @@
-# Contentio-shop
+# Rokuc.cz
 Frontend for contentio.app REST API
 
 ## Installation guide
