@@ -1,0 +1,19 @@
+version: '3'
+
+networks:
+  strategio-network:
+
+services:
+  app:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    restart: "no"
+    networks:
+      - strategio-network
+    environment:
+      TZ: ${APP_TIME_ZONE}
+    ports:
+      - "8080:80"
+    volumes:
+      - $PWD:/var/www/html:cached

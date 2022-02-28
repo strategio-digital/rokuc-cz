@@ -1,0 +1,5 @@
+/.env
+/www/temp/
+/node_modules/
+/vendor/
+/assets/_static

@@ -1,0 +1,12 @@
+{
+    "name": "contentio-shop",
+    "license": "UNLICENSED",
+    "dependencies": {
+        "contentio-app-deps": "0.0.3"
+    },
+    "scripts": {
+        "dev": "npx mix",
+        "prod": "npx mix --production",
+        "watch": "npx mix watch"
+    }
+}
