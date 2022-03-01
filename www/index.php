@@ -14,7 +14,7 @@ $container = (new Bootstrap())
     ->projectRootPath(__DIR__ . '/../')
     ->configure([
         __DIR__ . '/../vendor/strategio/contentio-sdk/config/app.neon',
-        //__DIR__ . '/../config/app.neon'
+        __DIR__ . '/../config/app.neon'
     ]);
 
 $container->getByType(App::class)->run($container);

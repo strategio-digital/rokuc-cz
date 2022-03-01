@@ -8,12 +8,14 @@ declare(strict_types=1);
 namespace Strategio\Controller;
 
 use ContentioSdk\Attribute\Template;
+use ContentioSdk\Controller\Base\BaseController;
+use Symfony\Component\HttpFoundation\Response;
 
-class ArticleController extends \ContentioSdk\Controller\ArticleController
+class HomeController extends BaseController
 {
-    #[Template(path: __DIR__ . '/../../view/controller/article.latte')]
-    public function index(string $slug): void
+    #[Template(path: __DIR__ . '/../../view/controller/home.latte')]
+    public function index(): void
     {
-        parent::index($slug);
+    
     }
 }

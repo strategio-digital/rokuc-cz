@@ -7,3 +7,14 @@
 {varType ContentioSdk\Controller\Base\BaseController $controller}
 
 {extends './../vendor/strategio/contentio-sdk/view/@layout.latte'}
+
+{block bottom}{/block}
+
+{block head}
+    {include parent}
+{/block}
+
+{block top}
+    {include './components/top-panel.latte'}
+    {include './components/navbar.latte'}
+{/block}

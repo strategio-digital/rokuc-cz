@@ -9,7 +9,25 @@ module.exports = {
     ...contentioTheme,
     content: [
         ...contentioTheme.content,
-        __dirname + './assets/**/*.css',
-        __dirname + './view/**/*.latte',
-    ]
+        __dirname + '/assets/**/*.css',
+        __dirname + '/view/**/*.latte',
+    ],
+    theme: {
+        extend: {
+            fontFamily: {
+                sans: ['Ubuntu', 'sans-serif'],
+                serif: ['Playfair Display', 'serif'],
+            },
+            colors: {
+                gold: {
+                    light: '#c0b596',
+                    dark: '#b6a268'
+                },
+                blue: {
+                    dark: '#272c3f',
+                    light: '#41485f'
+                }
+            }
+        }
+    }
 }

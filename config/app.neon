@@ -1,2 +1,2 @@
 services:
-    #routerFactory: Strategio\Router\RouterFactory
+    routerFactory: Strategio\Router\RouterFactory
