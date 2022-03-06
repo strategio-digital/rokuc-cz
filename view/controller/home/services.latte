@@ -1,0 +1,33 @@
+{*
+ * Copyright (c) 2022 Strategio Digital s.r.o.
+ * @author Jiří Zapletal (https://strategio.digital, jz@strategio.digital)
+ *}
+
+{varType ContentioSdk\Component\AssetLoader $assets}
+{varType Strategio\Controller\HomeController $controller}
+
+<div class="relative mt-10 lg:mt-20" id="sluzby">
+    <div class="absolute w-full bg-gray-100 h-[300px]">
+        <!--img class="w-full h-full object-cover" src="{$assets->get('/img/home-hero-bg.jpg')}" alt="Odborník na lokalizace netěsností plochých střech"-->
+    </div>
+    <div class="relative container mx-auto py-10 lg:py-20 px-3 z-10">
+        <div class="sm:text-center">
+            <h2 class="text-3xl font-serif mb-5">Služby</h2>
+            <p class="text-lg">Kvalitní střecha je pro mě číslo jedna, zajistím, abyste ji měli také.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 mt-16 lg:mt-20 gap-x-10 gap-y-16">
+            {for $i = 0; $i < 15; $i++}
+                <div class="bg-white shadow p-5 relative">
+                    <a href="{$controller->link('/sluzby/lokalizace-a-netesnosti-a-dalsi-servis')}" class="block text-blue-light hover:text-rose-800">
+                        <img src="//via.placeholder.com/70" alt="..." class="rounded-full absolute top-[-35px]">
+                        <h3 class="text-lg mt-6 font-bold">Lokalizace netěsnosti a další servis</h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mt-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </a>
+                </div>
+            {/for}
+        </div>
+    </div>
+</div>

@@ -1,2 +1,4 @@
 services:
     routerFactory: Strategio\Router\RouterFactory
+
+    - Strategio\Model\NavbarDataset

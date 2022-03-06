@@ -8,8 +8,7 @@ declare(strict_types=1);
 namespace Strategio\Controller;
 
 use ContentioSdk\Attribute\Template;
-use ContentioSdk\Controller\Base\BaseController;
-use Symfony\Component\HttpFoundation\Response;
+use Strategio\Controller\Base\BaseController;
 
 class HomeController extends BaseController
 {

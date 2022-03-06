@@ -1,0 +1,104 @@
+{*
+ * Copyright (c) 2022 Strategio Digital s.r.o.
+ * @author Jiří Zapletal (https://strategio.digital, jz@strategio.digital)
+ *}
+
+{varType ContentioSdk\Component\AssetLoader $assets}
+{varType Strategio\Controller\HomeController $controller}
+
+<div class="relative" id="kontakt">
+    <div class="absolute w-full bg-gray-100 h-[240px] lg:h-[300px]">
+        <!--img class="w-full h-full object-cover" src="{$assets->get('/img/home-hero-bg.jpg')}" alt="Odborník na lokalizace netěsností plochých střech"-->
+    </div>
+    <div class="py-10 lg:py-20">
+        <div class="relative container mx-auto px-3">
+            <div class="sm:text-center">
+                <h2 class="text-3xl font-serif mb-5">Kontakt</h2>
+                <p class="text-lg">Zdarma se pobavíme o možnostech a krocích, které Vás dovedou ke kvalitní střeše.</p>
+            </div>
+            <div class="flex flex-col md:flex-row justify-center items-center mt-10 lg:mt-16">
+                <div class="w-full lg:w-1/3">
+                    <div class="p-5 sm:p-10 bg-white shadow-lg">
+                        <h3 class="font-serif text-2xl">Poptávky a dotazy</h3>
+                        <div class="mt-5">
+                            <label for="name" class="block text-sm font-medium text-gray-700">Jméno nebo název firmy <span class="text-red-600">*</span></label>
+                            <div class="mt-1 relative rounded-md shadow-sm">
+                                <input type="text" name="name" id="name" class="block w-full pr-10 focus:outline-none sm:text-sm rounded-md">
+                            </div>
+                        </div>
+                        <div class="mt-5">
+                            <label for="email" class="block text-sm font-medium text-gray-700">E-mail <span class="text-red-600">*</span></label>
+                            <div class="mt-1 relative rounded-md shadow-sm">
+                                <input type="email" name="email" id="email" class="block w-full pr-10 border-red-300 text-red-900 placeholder-red-300 focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm rounded-md">
+                                <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                                    <svg class="h-5 w-5 text-red-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <p class="mt-2 text-sm text-red-600" id="email-error">Zadejte e-mail v platném formátu.</p>
+                        </div>
+                        <div class="mt-5">
+                            <label for="phone" class="block text-sm font-medium text-gray-700">Telefon <span class="text-red-600">*</span></label>
+                            <div class="mt-1 relative rounded-md shadow-sm">
+                                <input type="tel" name="phone" id="phone" class="block w-full pr-10 border-red-300 text-red-900 placeholder-red-300 focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm rounded-md">
+                                <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                                    <svg class="h-5 w-5 text-red-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <p class="mt-2 text-sm text-red-600" id="email-error">Zadejte telefon v platném formátu.</p>
+                        </div>
+                        <div class="mt-5">
+                            <label for="message" class="block text-sm font-medium text-gray-700">Zpráva <span class="text-red-600">*</span></label>
+                            <div class="mt-1">
+                                <textarea placeholder="Dobrý den, potřebujeme pomoci se střechou.." rows="6" name="message" id="message" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"></textarea>
+                            </div>
+                        </div>
+                        <div class="text-sm text-right mt-3">
+                            <span class="text-red-600">*</span> povinné
+                        </div>
+
+                        <button class="btn-red">
+                            Odeslat zprávu
+                        </button>
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/3 md:pl-10 xl:pl-40 text-center md:text-left">
+                    <div class="mt-10">
+                        <div>Telefon</div>
+                        <div class="mt-1">
+                            <a href="tel:+420603258686" target="_blank" class="text-3xl text-bold text-red-700 hover:text-red-800">+420 603 258 686</a>
+                        </div>
+                    </div>
+                    <div class="mt-10">
+                        <div>E-mail</div>
+                        <div class="mt-1">
+                            <a href="mailto:roman@rokuc.cz" target="_blank" class="text-3xl text-bold text-red-700 hover:text-red-800">roman@rokuc.cz</a>
+                        </div>
+                    </div>
+                    <div class="mt-10">
+                        <div class="text-2xl">Kde mě naleznete</div>
+                        <div class="mt-1">
+                            <div>Roman Kučera</div>
+                            <div>Chlebov 60, 329 01 Soběslav</div>
+                            <div>
+                                Otevřít <a href="https://goo.gl/maps/cfPs4VgMUgN2" target="_blank" class="text-red-700 hover:text-red-800">Google Mapy</a>
+                                nebo <a href="https://en.mapy.cz/s/3qcRt" target="_blank" class="text-red-700 hover:text-red-800">Mapy.cz</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-10">
+                        <div class="text-2xl">Fakturační údaje</div>
+                        <div class="mt-1">
+                            <div><span class="font-bold">IČO:</span> 12906590</div>
+                            <div><span class="font-bold">DIČ:</span> CZ7102101721</div>
+                            <div><span class="font-bold">Číslo účtu:</span> 259997364/0300</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

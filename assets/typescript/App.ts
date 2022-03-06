@@ -4,3 +4,8 @@
  */
 
 import "./../../vendor/strategio/contentio-sdk/assets/typescript/App"
+import VideoSlider from "./components/VideoSlider";
+
+(() => {
+    VideoSlider();
+})();

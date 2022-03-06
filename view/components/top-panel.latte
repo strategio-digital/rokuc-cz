@@ -3,7 +3,17 @@
  * @author Jiří Zapletal (https://strategio.digital, jz@strategio.digital)
  *}
 
-<div class="bg-blue-dark">
+<div class="relative w-full bg-blue-extra-dark z-30"
+     x-data="{ show: true }"
+     x-show="show"
+     @scroll.document="show = document.body.getBoundingClientRect().top > -50"
+     x-transition:enter="transition ease-out duration-100"
+     x-transition:enter-start="transform opacity-0"
+     x-transition:enter-end="transform opacity-100"
+     x-transition:leave="transition ease-in duration-100"
+     x-transition:leave-start="transform opacity-100"
+     x-transition:leave-end="transform opacity-0"
+>
     <div class="container mx-auto px-3">
         <div class="flex gap-3 py-3 text-gold-light flex-wrap items-center justify-end">
             <a href="https://fb.com/znalecrokuc" target="_blank">

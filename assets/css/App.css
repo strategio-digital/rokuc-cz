@@ -3,5 +3,18 @@
  * @author Jiří Zapletal (https://strategio.digital, jz@strategio.digital)
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Ubuntu:ital,wght@0,400;0,700;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Ubuntu:ital,wght@0,400;0,700;1,700&display=swap");
 @import "../../vendor/strategio/contentio-sdk/assets/css/App.css";
+@import "~tiny-slider/dist/tiny-slider.css";
+
+.btn-gold {
+    @apply inline-block bg-gold-light border-2 border-gold-light transition hover:translate-y-1 hover:drop-shadow-lg rounded-full py-3 px-5 text-white duration-150 hover:bg-gold-dark focus:outline-none
+}
+
+.btn-gold-outline {
+    @apply inline-block bg-transparent border-2 border-gold-dark transition hover:translate-y-1 hover:drop-shadow-lg rounded-full py-3 px-5 text-gold-dark duration-150 hover:bg-gold-dark hover:text-white focus:outline-none
+}
+
+.btn-red {
+    @apply inline-block bg-rose-700 border-2 border-rose-700 transition hover:translate-y-1 hover:drop-shadow-lg rounded-full py-3 px-5 text-white duration-150 hover:bg-rose-800 focus:outline-none;
+}

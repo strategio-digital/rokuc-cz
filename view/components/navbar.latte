@@ -2,4 +2,77 @@
  * Copyright (c) 2022 Strategio Digital s.r.o.
  * @author Jiří Zapletal (https://strategio.digital, jz@strategio.digital)
  *}
- 
+
+{varType Strategio\Controller\Base\BaseController $controller}
+{varType Strategio\Model\NavbarDataset $navbar}
+
+<div x-data="{ active: 1, iterator: 0, mobileOpen: window.innerWidth >= 1280 }"
+     @resize.window="mobileOpen = window.innerWidth >= 1280"
+     class="absolute z-20 w-full bg-blue-dark border-b-2 border-gold-light py-3 xl:py-0" style="opacity: 0.98">
+    <div class="container mx-auto px-3 xl:flex justify-between items-center">
+        <div class="flex justify-between items-center">
+            <a href="/">
+                <img src="//via.placeholder.com/240x70" class="h-[30px] xl:h-auto">
+            </a>
+            <button class="text-white hover:text-gold-light transition duration-150 ease-out hover:ease-in flex xl:hidden" @click="mobileOpen = !mobileOpen">
+                <span class="mr-2">menu</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </div>
+
+        <div class="pt-3 xl:pt-0" x-show="mobileOpen" @click.outside="active = false; mobileOpen = window.innerWidth >= 1280">
+            {foreach $navbar->topNavbar() as $item}
+                <div class="relative xl:inline-block text-left z-30 xl:pl-4" x-data="{ id: ++iterator, get expanded() { return this.active === this.id }, set expanded(value) { this.active = value ? this.id : null } }">
+                    <a href="{$controller->link($item['link'] ?: '#')}"
+                       {if $item['dropdown']}
+                           @click="if($event.currentTarget.href.endsWith('#')) { $event.preventDefault(); }  expanded = !expanded;"
+                       {else}
+                           @click="expanded = !expanded; if(window.innerWidth < 1280) mobileOpen = false"
+                       {/if}
+                        class="
+                            inline-flex align-center justify-end w-full
+                            py-3 xl:pt-[1.5rem] xl:pb-[1.8rem]
+                            text-white hover:text-gold-dark focus:text-gold-dark
+                            border-t-[1px] border-white/10 xl:border-t-4 xl:border-transparent xl:focus:border-gold-dark xl:hover:border-gold-dark
+                            transition duration-150 ease-out hover:ease-in"
+                    >
+                        {$item['name']}
+                        {if $item['dropdown']}
+                            <svg class="ml-1 mt-1 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                            </svg>
+                        {/if}
+                    </a>
+                    {if $item['dropdown']}
+                        <div x-show="expanded"
+                             x-transition:enter="transition ease-out duration-100"
+                             x-transition:enter-start="transform opacity-0 xl:scale-95"
+                             x-transition:enter-end="transform opacity-100 xl:scale-100"
+                             x-transition:leave="transition ease-in duration-75"
+                             x-transition:leave-start="transform opacity-100 xl:scale-100"
+                             x-transition:leave-end="transform opacity-0 xl:scale-95"
+                             class="
+                                xl:absolute xl:w-[300px] xl:origin-top-left
+                                mb-4 xl:mb-0 xl:-mt-4
+                                xl:shadow bg-blue-dark text-white
+                                xl:border xl:border-blue-light xl:rounded"
+                             style="display: none"
+                        >
+                            <div class="xl:divide-y-[1px] xl:divide-blue-light">
+                                {foreach $item['dropdown'] as $dropdown}
+                                    <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+                                    <a href="{$controller->link($dropdown['link'])}" @click="if(window.innerWidth < 1280) mobileOpen = false"
+                                       class="block px-3 xl:px-4 py-2 xl:py-3 text-sm hover:text-gold-dark xl:hover:text-white xl:hover:bg-blue-light text-right xl:text-left">
+                                        {$dropdown['name']}
+                                    </a>
+                                {/foreach}
+                            </div>
+                        </div>
+                    {/if}
+                </div>
+            {/foreach}
+        </div>
+    </div>
+</div>

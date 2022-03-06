@@ -4,8 +4,7 @@
  *}
 
 {varType ContentioSdk\Component\AssetLoader $assets}
-{varType Strategio\Controller\ArticleController $controller}
-{varType array $home}
+{varType Strategio\Controller\HomeController $controller}
 
 {extends './../@layout.latte'}
 
@@ -16,34 +15,10 @@
 {/block}
 
 {block content}
-    <div class="relative h-3/4 bg-blue-light">
-        <div class="absolute inset-0">
-            <img class="w-full h-full object-cover" src="{$assets->get('/img/home-hero-bg.jpg')}" alt="Odborník na lokalizace netěsností plochých střech">
-        </div>
-        <div class="container h-full mx-auto relative px-3">
-            <div class="absolute bottom-0 right-0 hidden lg:block">
-                <img src="{$assets->get('/img/home-hero-photo.png')}" alt="Roman Kučera" class="h-[450px] xl:h-auto">
-            </div>
-            <div class="relative h-full flex justify-center items-center text-center z-10">
-                <div class="max-w-2xl">
-                    <div class="h2 text-2xl mb-3 text-white">Roman Kučera</div>
-                    <h1 class="text-3xl sm:text-5xl font-bold font-serif text-white sm:leading-[4rem]">Odborník na lokalizace netěsností plochých střech</h1>
-                    <a href="#" class="inline-block mt-10 bg-gold-light transition hover:translate-y-1 hover:drop-shadow-lg rounded-full py-4 px-10 text-white duration-150 hover:bg-gold-dark focus:outline-none">
-                        Služby
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="bg-gray-100">
-        <div class="container mx-auto px-3 py-6 sm:flex items-center text-center sm:justify-between">
-            <div class="lg:text-2xl">Chcete být v suchu? Neváhejte se na mě obrátit.</div>
-            <div class="ml-3 mt-4 sm:mt-0">
-                <a href="#" class="inline-block bg-rose-700 transition hover:translate-y-1 hover:drop-shadow-lg rounded-full py-4 px-10 text-white duration-150 hover:bg-rose-800 focus:outline-none">
-                    Poptávkový&nbsp;formulář
-                </a>
-            </div>
-        </div>
-    </div>
+    {include './home/hero-section.latte'}
+    {include './home/hero-section-cta.latte'}
+    {include './home/about-me.latte'}
+    {include './home/services.latte'}
+    {include './home/references.latte'}
+    {include './home/video-faq.latte'}
 {/block}

@@ -2,7 +2,8 @@
     "name": "contentio-shop",
     "license": "UNLICENSED",
     "dependencies": {
-        "contentio-app-deps": "0.0.3"
+        "contentio-app-deps": "0.0.3",
+        "tiny-slider": "^2.9.4"
     },
     "scripts": {
         "dev": "npx mix",
