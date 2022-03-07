@@ -8,7 +8,9 @@
 
 <div x-data="{ active: 1, iterator: 0, mobileOpen: window.innerWidth >= 1280 }"
      @resize.window="mobileOpen = window.innerWidth >= 1280"
-     class="absolute z-20 w-full bg-blue-dark border-b-2 border-gold-light py-3 xl:py-0" style="opacity: 0.98">
+     id="topNavbar"
+     class="relative z-20 w-full bg-blue-dark border-b-2 border-gold-light py-3 xl:py-0"
+     style="opacity: 0.98">
     <div class="container mx-auto px-3 xl:flex justify-between items-center">
         <div class="flex justify-between items-center">
             <a href="/">
@@ -25,7 +27,7 @@
         <div class="pt-3 xl:pt-0" x-show="mobileOpen" @click.outside="active = false; mobileOpen = window.innerWidth >= 1280">
             {foreach $navbar->topNavbar() as $item}
                 <div class="relative xl:inline-block text-left z-30 xl:pl-4" x-data="{ id: ++iterator, get expanded() { return this.active === this.id }, set expanded(value) { this.active = value ? this.id : null } }">
-                    <a href="{$controller->link($item['link'] ?: '#')}"
+                    <a href="{$controller->link($item['link'])}" data-smooth-scroll=""
                        {if $item['dropdown']}
                            @click="if($event.currentTarget.href.endsWith('#')) { $event.preventDefault(); }  expanded = !expanded;"
                        {else}

@@ -32,7 +32,7 @@ class NavbarDataset
             
             [
                 'name' => 'Netěsnosti plochých střech',
-                'link' => null,
+                'link' => '#',
                 'dropdown' => [
                     [
                         'name' => 'Lokalizace netěsnostní',
@@ -51,7 +51,7 @@ class NavbarDataset
             
             [
                 'name' => 'Další služby',
-                'link' => null,
+                'link' => '#',
                 'dropdown' => [
                     [
                         'name' => 'Školení firem a majitelů nemovitostí',
@@ -70,7 +70,7 @@ class NavbarDataset
             
             [
                 'name' => 'Průběh a užitečné informace',
-                'link' => null,
+                'link' => '#',
                 'dropdown' => [
                     [
                         'name' => 'Povinné kontroly plochých střech',

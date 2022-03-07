@@ -7,6 +7,10 @@
 @import "../../vendor/strategio/contentio-sdk/assets/css/App.css";
 @import "~tiny-slider/dist/tiny-slider.css";
 
+html {
+    scroll-behavior: smooth;
+}
+
 .btn-gold {
     @apply inline-block bg-gold-light border-2 border-gold-light transition hover:translate-y-1 hover:drop-shadow-lg rounded-full py-3 px-5 text-white duration-150 hover:bg-gold-dark focus:outline-none
 }

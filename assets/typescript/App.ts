@@ -5,7 +5,9 @@
 
 import "./../../vendor/strategio/contentio-sdk/assets/typescript/App"
 import VideoSlider from "./components/VideoSlider";
+import SmoothScroll from "./components/SmoothScroll";
 
 (() => {
     VideoSlider();
+    SmoothScroll();
 })();
