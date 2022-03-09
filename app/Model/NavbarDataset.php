@@ -9,6 +9,9 @@ namespace Strategio\Model;
 
 class NavbarDataset
 {
+    /**
+     * @return array<int,mixed>
+     */
     public function bottomNavbar(): array
     {
         return [
@@ -21,6 +24,9 @@ class NavbarDataset
         ];
     }
     
+    /**
+     * @return array<int,mixed>
+     */
     public function topNavbar(): array
     {
         return [
@@ -99,7 +105,7 @@ class NavbarDataset
             
             [
                 'name' => 'O mně',
-                'link' => '#o-mne',
+                'link' => '/aktuality/o-mne',
                 'dropdown' => null
             ],
             

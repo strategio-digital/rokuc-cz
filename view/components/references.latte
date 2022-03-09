@@ -1,0 +1,25 @@
+{*
+ * Copyright (c) 2022 Strategio Digital s.r.o.
+ * @author Jiří Zapletal (https://strategio.digital, jz@strategio.digital)
+ *}
+
+{varType ContentioSdk\Component\AssetLoader $assets}
+{varType Strategio\Controller\HomeController $controller}
+
+<div class="grid sm:grid-cols-3 gap-5 lg:gap-7 mt-10 lg:mt-16 justify-center">
+    {for $i = 0; $i < 3; $i++}
+        <a class="max-w-[400px] sm:max-w-full" href="{$controller->link('/reference/slug')}">
+            <div class="bg-gray-50 p-6">
+                <img src="https://dummyimage.com/400x300" alt="...">
+            </div>
+            <div class="px-6 mt-5">
+                {if $controller->request->getPathInfo() === '/'}
+                    <h3 class="text-lg mt-6">Lokalizace netěsnosti a další servis</h3>
+                {else}
+                    <h2 class="text-xl">Lokalizace netěsnosti a další servis</h2>
+                {/if}
+                <p class="mt-5 text-gray-500">„Chtěla bych panu Kučerovi velice poděkovat, jelikož jsme díky němu ušetřili nemalé peníze a také vyřešili problémy s nekvalitním zhotovitelem střechy.“</p>
+            </div>
+        </a>
+    {/for}
+</div>

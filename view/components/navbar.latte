@@ -11,7 +11,7 @@
      id="topNavbar"
      class="relative z-20 w-full bg-blue-dark border-b-2 border-gold-light py-3 xl:py-0"
      style="opacity: 0.98">
-    <div class="container mx-auto px-3 xl:flex justify-between items-center">
+    <div class="container mx-auto px-4 xl:flex justify-between items-center">
         <div class="flex justify-between items-center">
             <a href="/">
                 <img src="https://dummyimage.com/240x70" class="h-[30px] xl:h-auto">
@@ -66,7 +66,7 @@
                                 {foreach $item['dropdown'] as $dropdown}
                                     <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
                                     <a href="{$controller->link($dropdown['link'])}" @click="if(window.innerWidth < 1280) mobileOpen = false"
-                                       class="block px-3 xl:px-4 py-2 xl:py-3 text-sm hover:text-gold-dark xl:hover:text-white xl:hover:bg-blue-light text-right xl:text-left">
+                                       class="block px-4 xl:px-4 py-2 xl:py-3 text-sm hover:text-gold-dark xl:hover:text-white xl:hover:bg-blue-light text-right xl:text-left">
                                         {$dropdown['name']}
                                     </a>
                                 {/foreach}

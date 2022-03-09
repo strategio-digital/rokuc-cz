@@ -19,6 +19,26 @@
     {include './home/hero-section-cta.latte'}
     {include './home/about-me.latte'}
     {include './home/services.latte'}
-    {include './home/references.latte'}
+
+    <div class="relative">
+        <div class="absolute w-full bg-gray-100 h-[240px] lg:h-[300px]">
+            <!--img class="w-full h-full object-cover" src="{$assets->get('/img/home-hero-bg.jpg')}" alt="Odborník na lokalizace netěsností plochých střech"-->
+        </div>
+        <div class="relative container mx-auto pt-10 lg:pt-20 px-4 z-10 max-w-[1280px]">
+            <div class="sm:text-center">
+                <h2 class="text-3xl font-serif mb-5">Reference</h2>
+                <p class="text-lg">Příběhy a ke vší spokojenosti vyřešené problémy lidí, kteří se na mě obrátili.</p>
+            </div>
+
+            {include './../components/references.latte'}
+
+            <div class="text-center mt-8">
+                <a class="btn-gold-outline" href="{$controller->link('/reference')}">
+                    Načíst další
+                </a>
+            </div>
+        </div>
+    </div>
+
     {include './home/video-faq.latte'}
 {/block}

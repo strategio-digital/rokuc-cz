@@ -6,18 +6,18 @@
 {varType ContentioSdk\Component\AssetLoader $assets}
 {varType Strategio\Controller\HomeController $controller}
 
-<div class="relative mt-10 lg:mt-20" id="sluzby">
+<div class="relative mt-10 lg:mt-20">
     <div class="absolute w-full bg-gray-100 h-[300px]">
         <!--img class="w-full h-full object-cover" src="{$assets->get('/img/home-hero-bg.jpg')}" alt="Odborník na lokalizace netěsností plochých střech"-->
     </div>
-    <div class="relative container mx-auto py-10 lg:py-20 px-3 z-10">
+    <div class="relative container mx-auto py-10 lg:py-20 px-4 z-10">
         <div class="sm:text-center">
             <h2 class="text-3xl font-serif mb-5">Vaše dotazy</h2>
             <p class="text-lg">Odpovědi na vaše nejčastější dotazy o všem kolem plochých střech.</p>
         </div>
 
         <div class="flex justify-center items-center mt-10 lg:mt-16">
-            <button class="bg-rose-700 text-white py-12 px-3 w-12 hover:bg-rose-800" id="videoSlider-prev">
+            <button class="bg-rose-700 text-white py-12 px-4 w-12 hover:bg-rose-800 flex justify-center rounded-tl-md rounded-bl-md" id="videoSlider-prev">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
                 </svg>
@@ -33,7 +33,7 @@
                     {/foreach}
                 </div>
             </div>
-            <button class="bg-rose-700 text-white py-12 px-3 w-12 hover:bg-rose-800" id="videoSlider-next">
+            <button class="bg-rose-700 text-white py-12 px-4 w-12 hover:bg-rose-800 flex justify-center rounded-tr-md rounded-br-md" id="videoSlider-next">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
                 </svg>
