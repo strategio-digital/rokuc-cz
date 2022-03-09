@@ -1,0 +1,46 @@
+{*
+ * Copyright (c) 2022 Strategio Digital s.r.o.
+ * @author Jiří Zapletal (https://strategio.digital, jz@strategio.digital)
+ *}
+
+{varType ContentioSdk\Component\AssetLoader $assets}
+{varType Strategio\Controller\HomeController $controller}
+
+{extends './../@layout.latte'}
+
+{block head}
+    <title>Aktuality</title>
+    <meta name="description" content="To nejnovější z oblasti plochých střech na jednom místě">
+    {include parent}
+{/block}
+
+{block content}
+    <div class="relative">
+        <div class="absolute w-full bg-gray-100 h-[360px] lg:h-[440px]">
+            {*<img class="w-full h-full object-cover" src="{$assets->get('/img/home-hero-bg.jpg')}" alt="...">*}
+        </div>
+        <div class="relative container mx-auto pt-44 xl:pt-[200px] pb-10 lg:pb-20 px-3 z-10 max-w-[1280px]" id="reference">
+            <div class="sm:text-center">
+                <h1 class="text-3xl font-serif font-bold mb-5">Aktuality</h1>
+                <p class="text-lg">To nejnovější z oblasti plochých střech na jednom místě</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-5 lg:gap-7 mt-10 lg:mt-16 justify-center">
+                {for $i = 0; $i < 9; $i++}
+                    <div class="shadow lg:shadow-md max-w-[400px] sm:max-w-full">
+                        <a href="{$controller->link('/aktuality/slug')}" class="bg-gray-50 p-6 block">
+                            <img src="https://dummyimage.com/400x300" alt="...">
+                        </a>
+                        <div class="p-6">
+                            <h2 class="text-xl">Netěsnosti plochých střech</h2>
+                            <p class="mt-3 mb-5 text-gray-500">Oprava netěsností a další servis je především určen pro širokou veřejnost. Jedná se o majitele rodinných domů...</p>
+                            <a href="{$controller->link('/aktuality/slug')}" class="btn-gold-outline">Přečíst více</a>
+                        </div>
+                    </div>
+                {/for}
+            </div>
+
+            {include './../components/paginator.latte'}
+        </div>
+    </div>
+{/block}
