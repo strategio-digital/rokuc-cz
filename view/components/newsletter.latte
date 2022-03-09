@@ -8,10 +8,14 @@
 
 <div class="bg-gray-100">
     <div class="relative container mx-auto px-3 py-8 md:flex items-center sm:justify-between">
-        <div class="xl:text-2xl">Dostávejte to nejnovější z oblasti střech rovnou na Váš e-mail</div>
-        <div class="flex mt-4 md:mt-0 md:pl-10 min-w-[300px] text-right">
-            <input type="email" name="email" id="email" class="rounded-tl-lg rounded-bl-lg block w-full pr-10 border-gray-300 placeholder-gray-300 focus:outline-none sm:text-sm">
-            <button class="rounded-br-lg rounded-tr-lg inline-block bg-rose-700 border-2 border-rose-700 px-5 text-white duration-150 hover:bg-rose-800 focus:outline-none">Odebírat&nbsp;novinky</button>
-        </div>
+        <div class="lg:text-2xl md:pr-10 mb-4 md:mb-0">Dostávejte to nejnovější z oblasti střech rovnou na Váš e-mail</div>
+        <form id="subscribeForm" data-v-group class="w-full max-w-[400px]">
+            <div data-v-alerts class="mb-3 hidden"></div>
+            <div class="flex md:mt-0 text-right">
+                <input type="email" name="email" id="email" class="rounded-tl-lg rounded-bl-lg block w-full border-gray-300 placeholder-gray-300 focus:outline-none sm:text-sm pr-3">
+                <button type="submit" class="rounded-br-lg rounded-tr-lg inline-block bg-rose-700 border-2 border-rose-700 px-5 text-white duration-150 hover:bg-rose-800 focus:outline-none disabled:bg-gray-500 disabled:border-gray-500">Odebírat&nbsp;novinky</button>
+            </div>
+            <p class="mt-1 text-sm text-red-600 hidden" data-v-message></p>
+        </form>
     </div>
 </div>

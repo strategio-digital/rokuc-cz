@@ -1,0 +1,62 @@
+{*
+ * Copyright (c) 2022 Strategio Digital s.r.o.
+ * @author Jiří Zapletal (https://strategio.digital, jz@strategio.digital)
+ *}
+
+<form class="p-5 sm:p-10 bg-white shadow-lg" id="contactForm" novalidate>
+    <h3 class="font-serif text-2xl">Poptávky a dotazy</h3>
+    <div class="mt-5" data-v-group>
+        <label for="name" class="block text-sm font-medium text-gray-700">Jméno nebo název firmy <span class="text-red-600">*</span></label>
+        <div class="mt-1 relative rounded-md shadow-sm">
+            <input type="text" name="name" id="name" class="block w-full sm:text-sm rounded-md border-gray-300 text-gray-900 placeholder-gray-300 focus:ring-indigo-500 focus:border-indigo-500">
+            <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none hidden" data-v-icon>
+                <svg class="h-5 w-5 text-red-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                </svg>
+            </div>
+        </div>
+        <p class="mt-1 text-sm text-red-600 hidden" data-v-message></p>
+    </div>
+    <div class="mt-5" data-v-group>
+        <label for="email" class="block text-sm font-medium text-gray-700">E-mail <span class="text-red-600">*</span></label>
+        <div class="mt-1 relative rounded-md shadow-sm">
+            <input type="email" name="email" id="email" class="block w-full sm:text-sm rounded-md border-gray-300 text-gray-900 placeholder-gray-300 focus:ring-indigo-500 focus:border-indigo-500">
+            <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none hidden" data-v-icon>
+                <svg class="h-5 w-5 text-red-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                </svg>
+            </div>
+        </div>
+        <p class="mt-1 text-sm text-red-600 hidden" data-v-message></p>
+    </div>
+    <div class="mt-5" data-v-group>
+        <label for="phone" class="block text-sm font-medium text-gray-700">Telefon <span class="text-red-600">*</span></label>
+        <div class="mt-1 relative rounded-md shadow-sm">
+            <input type="tel" name="phone" id="phone" class="block w-full sm:text-sm rounded-md border-gray-300 text-gray-900 placeholder-gray-300 focus:ring-indigo-500 focus:border-indigo-500">
+            <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none hidden" data-v-icon>
+                <svg class="h-5 w-5 text-red-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                </svg>
+            </div>
+        </div>
+        <p class="mt-1 text-sm text-red-600 hidden" data-v-message></p>
+    </div>
+    <div class="mt-5" data-v-group>
+        <label for="phone" class="block text-sm font-medium text-gray-700">Zpráva <span class="text-red-600">*</span></label>
+        <div class="mt-1 relative rounded-md shadow-sm">
+            <textarea placeholder="Dobrý den, potřebujeme pomoci se střechou.." rows="6" name="message" id="message" class="block w-full sm:text-sm rounded-md border-gray-300 text-gray-900 placeholder-gray-300 focus:ring-indigo-500 focus:border-indigo-500"></textarea>
+            <div class="absolute top-0 right-0 pt-3 pr-3 flex items-center pointer-events-none hidden" data-v-icon>
+                <svg class="h-5 w-5 text-red-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                </svg>
+            </div>
+        </div>
+        <p class="mt-1 text-sm text-red-600 hidden" data-v-message></p>
+    </div>
+
+    <div data-v-alerts class="mt-5 hidden"></div>
+
+    <button type="submit" class="btn-red w-full mt-5">
+        Odeslat zprávu
+    </button>
+</form>

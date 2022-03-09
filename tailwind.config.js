@@ -9,6 +9,7 @@ module.exports = {
     ...contentioTheme,
     content: [
         ...contentioTheme.content,
+        __dirname + '/assets/**/*.ts',
         __dirname + '/assets/**/*.css',
         __dirname + '/view/**/*.latte',
     ],
