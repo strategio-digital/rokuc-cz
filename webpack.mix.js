@@ -5,4 +5,7 @@
 
 const laravelMix = require('laravel-mix');
 const contentioMix = require('./vendor/strategio/contentio-sdk/mix.config');
-contentioMix(laravelMix, true)
+const mix = contentioMix(laravelMix, true);
+
+mix.copyDirectory('node_modules/lightgallery/fonts/*', 'www/temp/static/font');
+mix.copyDirectory('node_modules/lightgallery/images/*', 'www/temp/static/img');

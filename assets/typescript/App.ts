@@ -11,6 +11,9 @@ import ContactForm from "../../vendor/strategio/contentio-sdk/assets/typescript/
 import VideoSlider from "./components/VideoSlider";
 import SmoothScroll from "./components/SmoothScroll";
 
+import lightGallery from 'lightgallery';
+import lgThumbnail from 'lightgallery/plugins/thumbnail'
+
 (() => {
     // Alpine
     Alpine();
@@ -23,6 +26,15 @@ import SmoothScroll from "./components/SmoothScroll";
 
     // Scroll
     SmoothScroll();
+
+    // Light gallery
+    (Array.from(document.querySelectorAll('[data-gallery-container]')) as HTMLElement[]).forEach(node => {
+        lightGallery(node, {
+            plugins: [lgThumbnail],
+            licenseKey: 'your_license_key',
+            speed: 300,
+        });
+    })
 
     // Form validator
     const formValidator = FormValidator({
