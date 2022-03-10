@@ -92,7 +92,7 @@ class NavbarDataset
                     ],
                     [
                         'name' => 'Lokalizační technologie',
-                        'link' => '/sluzby/lokalizacni-technologie'
+                        'link' => '/lokalizacni-technologie'
                     ],
                 ]
             ],

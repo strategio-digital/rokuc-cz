@@ -1,0 +1,79 @@
+{*
+ * Copyright (c) 2022 Strategio Digital s.r.o.
+ * @author Jiří Zapletal (https://strategio.digital, jz@strategio.digital)
+ *}
+
+{varType ContentioSdk\Component\AssetLoader $assets}
+{varType Strategio\Controller\HomeController $controller}
+
+<div class="container py-10 lg:py-20 px-4 md:px-6 lg:px-8 mx-auto md:max-w-3xl lg:max-w-4xl xl:max-w-6xl 2xl:max-w-7xl">
+    <div class="flex flex-wrap md:flex-nowrap gap-10">
+        <div class="lg:w-3/5 order-2 md:order-1">
+            <div class="prose prose-indigo prose-lg text-gray-500">
+                <p>Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris semper sed amet vitae sed turpis id. Id dolor praesent donec est. Odio penatibus risus viverra tellus varius sit neque erat velit.</p>
+
+                <figure>
+                    <img class="w-full rounded-lg" src="https://dummyimage.com/1200x800" alt="...">
+                    <figcaption>Sagittis scelerisque nulla cursus in enim consectetur quam.</figcaption>
+                </figure>
+
+                {var $key = 'https://youtu.be/0DV7g1YyxyI'}
+                <div class="rounded-lg overflow-hidden border-[1px] border-gray-300">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <iframe src="https://www.youtube.com/embed/{$key|replace:'https://youtu.be/'}" frameborder="0" allow="clipboard-write; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <p>Purus morbi dignissim senectus mattis <a href="#">adipiscing</a>. Amet, massa quam varius orci dapibus volutpat cras. In amet eu ridiculus leo sodales cursus tristique. Tincidunt sed tempus ut viverra ridiculus non molestie. Gravida quis fringilla amet eget dui tempor dignissim. Facilisis auctor venenatis varius nunc, congue erat ac. Cras fermentum convallis quam.</p>
+                <p>Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris semper sed amet vitae sed turpis id. Id dolor praesent donec est. Odio penatibus risus viverra tellus varius sit neque erat velit.</p>
+                <p>Purus morbi dignissim senectus mattis <a href="#">adipiscing</a>. Amet, massa quam varius orci dapibus volutpat cras. In amet eu ridiculus leo sodales cursus tristique. Tincidunt sed tempus ut viverra ridiculus non molestie. Gravida quis fringilla amet eget dui tempor dignissim. Facilisis auctor venenatis varius nunc, congue erat ac. Cras fermentum convallis quam.</p>
+                <p>Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris semper sed amet vitae sed turpis id. Id dolor praesent donec est. Odio penatibus risus viverra tellus varius sit neque erat velit.</p>
+            </div>
+        </div>
+
+        <div class="lg:w-2/5 order-1 md:order-2">
+            <div class="md:bg-gray-50 md:p-6 lg:p-10">
+                <div class="prose prose-indigo text-gray-500">
+                    <h2>Přednosti</h2>
+                    <ul>
+                        <li>přesnost a rychlost lokalizace netěsností</li>
+                        <li>prověření kvality svárových spojů</li>
+                        <li>detekce vizuálně nezjistitelných poruch</li>
+                        <li>pořízení foto a video dokumentace</li>
+                        <li>kontrola nejlepšími přístroji na trhu</li>
+                    </ul>
+
+                    <h2>Použití</h2>
+                    <ul>
+                        <li>foliové a asfaltové ploché střechy</li>
+                        <li>zelené a kačírkové střechy</li>
+                        <li>balkóny, terasy a lodžie</li>
+                        <li>spodní stavby</li>
+                        <li>střešní vpusti</li>
+                        <li>svody a potrubí</li>
+                    </ul>
+
+                    <h2>Přístroje</h2>
+                    <ul>
+                        <li>endoskopická kamera</li>
+                        <li>dýmová zkouška</li>
+                        <li>jiskrová zkouška</li>
+                        <li>elektroimpulzní zkouška</li>
+                        <li>jehlová zkouška</li>
+                    </ul>
+
+                    <h2>Průběh</h2>
+                    <ul>
+                        <li>lokalizaci netěsností provádíme v případě poškození a průniku vody</li>
+                        <li>obvykle proběhne lokalizace nětěsností během jednoho pracovního dne</li>
+                        <li>obdržíte přesné posouzení poškození jako základ pro provedení odborné opravy</li>
+                    </ul>
+                </div>
+
+                <a href="#kontakt" data-smooth-scroll class="btn-red mt-10 w-full text-center">
+                    Poptávkový formulář
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

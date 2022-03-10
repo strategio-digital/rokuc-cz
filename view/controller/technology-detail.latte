@@ -1,0 +1,22 @@
+{*
+ * Copyright (c) 2022 Strategio Digital s.r.o.
+ * @author Jiří Zapletal (https://strategio.digital, jz@strategio.digital)
+ *}
+
+{varType ContentioSdk\Component\AssetLoader $assets}
+{varType Strategio\Controller\HomeController $controller}
+
+{extends './../@layout.latte'}
+
+{block head}
+    <title>Lokalizace a zkouška netěsností</title>
+    <meta name="description" content="...">
+    {include parent}
+{/block}
+
+{block content}
+    {include './../components/service-header.latte' title: 'Lokalizační technologie'}
+    {include './../components/service-content.latte'}
+    {include './../components/gallery.latte'}
+    {include './../components/prev-next.latte' title: 'technologie'}
+{/block}
