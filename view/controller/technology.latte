@@ -1,0 +1,45 @@
+{*
+ * Copyright (c) 2022 Strategio Digital s.r.o.
+ * @author Jiří Zapletal (https://strategio.digital, jz@strategio.digital)
+ *}
+
+{varType ContentioSdk\Component\AssetLoader $assets}
+{varType Strategio\Controller\HomeController $controller}
+
+{extends './../@layout.latte'}
+
+{block head}
+    <title>Lokalizační technologie</title>
+    <meta name="description" content="...">
+    {include parent}
+{/block}
+
+{block content}
+    <div class="bg-gray-100">
+        <div class="container mx-auto pt-24 lg:pt-32 xl:pt-[200px] pb-10 lg:pb-20 px-4 z-10 md:max-w-3xl lg:max-w-4xl 2xl:max-w-5xl">
+            <div class="sm:text-center">
+                <h1 class="text-3xl lg:text-4xl font-serif font-bold mb-5">Lokalizační technologie</h1>
+                <p class="text-lg">Metody, technologie a přístroje, které používám pro odhalení netěsností u plochých střech</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto pb-10 lg:pt-10 lg:pb-20 px-4 z-10 md:max-w-3xl lg:max-w-4xl 2xl:max-w-5xl">
+        <div class="flex flex-col sm:flex-row gap-5 md:gap-10 items-center mt-10" n:foreach="['', '', '', ''] as $i">
+            <div n:class="'sm:w-1/2 flex', $iterator->isEven() ? 'sm:order-last sm:justify-end'">
+                <div class="bg-gray-50 p-6">
+                    <img src="https://dummyimage.com/600x500" alt="...">
+                </div>
+            </div>
+            <div class="sm:w-1/2">
+                <h2 class="text-3xl mb-5">Jiskrová zkouška</h2>
+                <p class="text-gray-500 leading-7">
+                    Jiskrová zkouška detekuje i ty nejmenší kapilární netěsnosti. Tuto techniku nasazujeme zejména na
+                    suchých plochách střech, kde by dodatečné zavlažování bylo obtížné. Příčiny zatékání do střechy jsou
+                    přesně zjistitelné vizuálně jiskrovým výbojem i akustickou indikací přístroje
+                </p>
+                <a href="{$controller->link('/technologie/jiskrova-zkouska')}" class="btn-gold-outline mt-5">Více informací</a>
+            </div>
+        </div>
+    </div>
+{/block}
