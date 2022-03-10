@@ -6,34 +6,31 @@
 {varType ContentioSdk\Component\AssetLoader $assets}
 {varType Strategio\Controller\HomeController $controller}
 
-<div class="container mx-auto px-4 pt-10 lg:pt-20 lg:pb-5" id="o-mne">
-    <div class="grid grid-cols-12 align-center justify-between">
-        <div class="col-span-12 lg:col-span-6 relative mr-[20px] md:mr-[40px] lg:mr-[60px]">
+<div class="container mx-auto px-4 pt-10 lg:pt-20 md:max-w-3xl lg:max-w-4xl xl:max-w-6xl 2xl:max-w-7xl" id="o-mne">
+    <div class="flex flex-wrap">
+        <div class="md:w-1/2 relative mb-5 mr-[20px] md:mr-0">
             <div class="absolute bg-blue-light h-full w-full right-[-20px] bottom-[-20px]"></div>
             <img class="relative" src="{$assets->get('/img/about-me-photo.jpg')}" alt="Roman Kučera">
         </div>
-
-        <article class="col-span-12 lg:col-span-6 flex flex-col justify-center">
-            <div class="2xl:ml-20 mt-10 mt:lg-0">
-                <h2 class="font-serif text-3xl mb-5">O mně</h2>
-                <div class="prose lg:prose-lg max-w-[100%]">
-                    <p>Jsem odborník na lokalizace netěsností plochých střech, inspektor řemesel a soudní znalec střech. V oboru se pohybuji přes 35 let.</p>
-                    <p>
-                        Střechy byly, jsou a budou můj denní chléb. Kdyby se mě někdo zeptal, zda-li bych se dnes rozhodl jinak, bez váhání odpovím, že ne.
-                        Když si vzpomenu na svou dlouhou cestu a proč jsem na ní setrval, tak vím, že to mělo smysl. Byl to účel – udělat lidem střechu,
-                        která zajistí dobré zázemí pro rodinu. Toto mě provází každý den.
-                    </p>
-                    <p>Svou práci dělám poctivě a vždy tak, aby střecha vydržela desítky let.</p>
-                </div>
-                <div class="mt-7">
-                    <a class="btn-gold-outline mr-3" href="{$controller->link('/aktuality/o-mne')}">
-                        <span class="hidden sm:inline">Více o</span> <span class="sm:hidden">O</span> mně
-                    </a>
-                    <a  href="#kontakt" data-smooth-scroll class="btn-red mt-4 sm:mt-0">
-                        Konzultovat řešení
-                    </a>
-                </div>
+        <div class="md:w-1/2 md:pl-10 lg:pl-16">
+            <h2 class="font-serif text-3xl mb-5 mt-8 md:mt-0">O mně</h2>
+            <div class="prose lg:prose-lg max-w-[100%]">
+                <p>Jsem odborník na lokalizace netěsností plochých střech, inspektor řemesel a soudní znalec střech. V oboru se pohybuji přes 35 let.</p>
+                <p>
+                    Střechy byly, jsou a budou můj denní chléb. Kdyby se mě někdo zeptal, zda-li bych se dnes rozhodl jinak, bez váhání odpovím, že ne.
+                    Když si vzpomenu na svou dlouhou cestu a proč jsem na ní setrval, tak vím, že to mělo smysl. Byl to účel – udělat lidem střechu,
+                    která zajistí dobré zázemí pro rodinu. Toto mě provází každý den.
+                </p>
+                <p>Svou práci dělám poctivě a vždy tak, aby střecha vydržela desítky let.</p>
             </div>
-        </article>
+            <div class="mt-7">
+                <a class="btn-gold-outline mr-3" href="{$controller->link('/aktuality/o-mne')}">
+                    <span class="hidden sm:inline">Více o</span> <span class="sm:hidden">O</span> mně
+                </a>
+                <a  href="#kontakt" data-smooth-scroll class="btn-red mt-4 sm:mt-0">
+                    Konzultovat řešení
+                </a>
+            </div>
+        </div>
     </div>
 </div>

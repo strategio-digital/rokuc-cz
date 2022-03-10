@@ -6,8 +6,8 @@
 {varType Strategio\Controller\Base\BaseController $controller}
 {varType Strategio\Model\NavbarDataset $navbar}
 
-<div x-data="{ active: 1, iterator: 0, mobileOpen: window.innerWidth >= 1280 }"
-     @resize.window="mobileOpen = window.innerWidth >= 1280"
+<div x-data="{ active: 1, iterator: 0, mobileOpen: window.innerWidth >= 1280, w: window.innerWidth }"
+     @resize.window="if(w !== window.innerWidth) { mobileOpen = window.innerWidth >= 1280; w = window.innerWidth}"
      id="topNavbar"
      class="relative z-20 w-full bg-blue-dark border-b-2 border-gold-light py-3 xl:py-0"
      style="opacity: 0.98">
