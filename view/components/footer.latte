@@ -20,7 +20,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" class="inline h-6 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6" />
                         </svg>
-                        <a class="text-orange-200 hover:text-orange-300" href="{$controller->link($item['link'])}" data-smooth-scroll>{$item['name']}</a>
+                        <a class="text-orange-200 hover:text-orange-300" href="{$item['link']}" data-smooth-scroll>{$item['name']}</a>
                     </li>
                 </ul>
             </div>
@@ -51,7 +51,7 @@
                         <a href="tel:+420603258686" target="_blank" class="text-orange-200 hover:text-orange-300">+420 603 258 686</a>
                     </div>
                     <div class="mt-5">
-                        <a href="{$controller->link('/aktuality/o-mne')}" target="_blank" class="text-orange-200 hover:text-orange-300">Číst více o mně</a>
+                        <a href="{$controller->link('news_list_home')}" class="text-orange-200 hover:text-orange-300">Číst více o mně</a>
                     </div>
                 </div>
             </div>

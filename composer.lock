@@ -1115,12 +1115,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/strategio-digital/contentio-sdk.git",
-                "reference": "c1e1c679f621c7ca4a016d885587f0b5c12d88bb"
+                "reference": "b1b4df86d74d376245e2f7e8db2c1738ddfa889d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/strategio-digital/contentio-sdk/zipball/c1e1c679f621c7ca4a016d885587f0b5c12d88bb",
-                "reference": "c1e1c679f621c7ca4a016d885587f0b5c12d88bb",
+                "url": "https://api.github.com/repos/strategio-digital/contentio-sdk/zipball/b1b4df86d74d376245e2f7e8db2c1738ddfa889d",
+                "reference": "b1b4df86d74d376245e2f7e8db2c1738ddfa889d",
                 "shasum": ""
             },
             "require": {
@@ -1159,7 +1159,7 @@
                 "issues": "https://github.com/strategio-digital/contentio-sdk/issues",
                 "source": "https://github.com/strategio-digital/contentio-sdk/tree/develop"
             },
-            "time": "2022-03-10T12:19:53+00:00"
+            "time": "2022-03-11T10:25:44+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",

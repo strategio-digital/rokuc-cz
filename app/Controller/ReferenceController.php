@@ -15,8 +15,8 @@ class ReferenceController extends BaseController
     #[Template(path: __DIR__ . '/../../view/controller/reference.latte')]
     public function index(string $page = null): void
     {
-        if ($this->request->getPathInfo() === '/reference/strana/1') {
-            $this->redirect('/reference');
+        if ($this->request->getPathInfo() === $this->link('reference_list', ['page' => 1])) {
+            $this->redirect($this->link('reference_list_home'));
         }
         
         // Todo:

@@ -15,8 +15,8 @@ class NewsController extends BaseController
     #[Template(path: __DIR__ . '/../../view/controller/news.latte')]
     public function index(string $page = null): void
     {
-        if ($this->request->getPathInfo() === '/aktuality/strana/1') {
-            $this->redirect('/aktuality');
+        if ($this->request->getPathInfo() === $this->link('news_list', ['page' => 1])) {
+            $this->redirect($this->link('news_list_home'));
         }
         
         // Todo:

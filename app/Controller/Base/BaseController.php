@@ -13,6 +13,7 @@ use Latte\Engine;
 use Strategio\Model\NavbarDataset;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Generator\UrlGenerator;
 
 class BaseController extends \ContentioSdk\Controller\Base\BaseController
 {
@@ -22,10 +23,10 @@ class BaseController extends \ContentioSdk\Controller\Base\BaseController
         protected Response      $response,
         protected AssetLoader   $assetLoader,
         protected NavbarDataset $navbarDataset,
+        protected UrlGenerator  $urlGenerator,
         public Request          $request,
     )
     {
-    
     }
     
     public function startup(): void

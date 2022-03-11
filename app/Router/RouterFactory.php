@@ -21,20 +21,20 @@ class RouterFactory extends BaseRouter
     {
         $routes = parent::createRoutes();
         $this->add('home', '/', [HomeController::class, 'index']);
-    
+        
         $this->add('news_list_home', '/aktuality', [NewsController::class, 'index']);
         $this->add('news_list', '/aktuality/strana/{page<\d+>}', [NewsController::class, 'index']);
         $this->add('news_detail', '/aktuality/{slug}', [NewsController::class, 'detail']);
-    
+        
         $this->add('reference_list_home', '/reference', [ReferenceController::class, 'index']);
         $this->add('reference_list', '/reference/strana/{page<\d+>}', [ReferenceController::class, 'index']);
         $this->add('reference_detail', '/reference/{slug}', [ReferenceController::class, 'detail']);
-    
+        
         $this->add('service_detail', '/sluzby/{slug}', [ServiceController::class, 'detail']);
-    
+        
         $this->add('technology_list', '/lokalizacni-technologie', [TechnologyController::class, 'index']);
         $this->add('technology_detail', '/technologie/{slug}', [TechnologyController::class, 'detail']);
-    
+        
         return $routes;
     }
 }

@@ -13,7 +13,7 @@
      style="opacity: 0.98">
     <div class="container mx-auto px-4 xl:flex justify-between items-center">
         <div class="flex justify-between items-center">
-            <a href="/">
+            <a href="{$controller->link('home')}">
                 <img src="https://dummyimage.com/240x70" class="h-[30px] xl:h-auto">
             </a>
             <button class="text-white hover:text-gold-light transition duration-150 ease-out hover:ease-in flex xl:hidden" @click="mobileOpen = !mobileOpen">
@@ -27,7 +27,7 @@
         <div class="pt-3 xl:pt-0" x-show="mobileOpen" @click.outside="active = false; mobileOpen = window.innerWidth >= 1280">
             {foreach $navbar->topNavbar() as $item}
                 <div class="relative xl:inline-block text-left z-30 xl:pl-4" x-data="{ id: ++iterator, get expanded() { return this.active === this.id }, set expanded(value) { this.active = value ? this.id : null } }">
-                    <a href="{$controller->link($item['link'])}" data-smooth-scroll=""
+                    <a href="{$item['link']}" data-smooth-scroll=""
                        {if $item['dropdown']}
                            @click="if($event.currentTarget.href.endsWith('#')) { $event.preventDefault(); }  expanded = !expanded;"
                        {else}
@@ -65,7 +65,7 @@
                             <div class="xl:divide-y-[1px] xl:divide-blue-light">
                                 {foreach $item['dropdown'] as $dropdown}
                                     <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
-                                    <a href="{$controller->link($dropdown['link'])}" @click="if(window.innerWidth < 1280) mobileOpen = false"
+                                    <a href="{$dropdown['link']}" @click="if(window.innerWidth < 1280) mobileOpen = false"
                                        class="block px-4 xl:px-4 py-2 xl:py-3 text-sm hover:text-gold-dark xl:hover:text-white xl:hover:bg-blue-light text-right xl:text-left">
                                         {$dropdown['name']}
                                     </a>

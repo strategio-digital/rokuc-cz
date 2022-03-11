@@ -10,7 +10,6 @@ import SubscribeForm from "../../vendor/strategio/contentio-sdk/assets/typescrip
 import ContactForm from "../../vendor/strategio/contentio-sdk/assets/typescript/Components/ContactForm";
 import VideoSlider from "./components/VideoSlider";
 import SmoothScroll from "./components/SmoothScroll";
-
 import lightGallery from 'lightgallery';
 import lgThumbnail from 'lightgallery/plugins/thumbnail'
 

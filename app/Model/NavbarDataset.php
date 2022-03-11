@@ -7,19 +7,24 @@ declare(strict_types=1);
 
 namespace Strategio\Model;
 
+use Symfony\Component\Routing\Generator\UrlGenerator;
+
 class NavbarDataset
 {
+    public function __construct(protected UrlGenerator $generator)
+    {
+    }
+    
     /**
      * @return array<int,mixed>
      */
     public function bottomNavbar(): array
     {
         return [
-            ['name' => 'Domů', 'link' => '/'],
-            ['name' => 'O mně', 'link' => '/aktuality/o-mne'],
-            ['name' => 'Služby', 'link' => '/sluzby'],
-            ['name' => 'Aktuality', 'link' => '/aktuality'],
-            ['name' => 'Reference', 'link' => '/reference'],
+            ['name' => 'Domů', 'link' => $this->generator->generate('home')],
+            ['name' => 'O mně', 'link' => $this->generator->generate('news_detail', ['slug' => 'o-mne'])],
+            ['name' => 'Aktuality', 'link' => $this->generator->generate('news_list_home')],
+            ['name' => 'Reference', 'link' => $this->generator->generate('reference_list_home')],
             ['name' => 'Kontakt', 'link' => '#kontakt']
         ];
     }
@@ -32,7 +37,7 @@ class NavbarDataset
         return [
             [
                 'name' => 'Aktuality',
-                'link' => '/aktuality',
+                'link' => $this->generator->generate('news_list_home'),
                 'dropdown' => null
             ],
             
@@ -42,15 +47,15 @@ class NavbarDataset
                 'dropdown' => [
                     [
                         'name' => 'Lokalizace netěsnostní',
-                        'link' => '/sluzby/lokalizace-netesnosti'
+                        'link' => $this->generator->generate('service_detail', ['slug' => 'lokalizace-netesnosti'])
                     ],
                     [
                         'name' => 'Oprava netěsností a další služby',
-                        'link' => '/sluzby/oprava-netesnosti-a-dalsi-sluzby'
+                        'link' => $this->generator->generate('service_detail', ['slug' => 'oprava-netesnosti-a-dalsi-sluzby'])
                     ],
                     [
                         'name' => 'Zjišťování vlhkosti v plochých střechách',
-                        'link' => '/sluzby/zjistovani-vlhkosti-v-plochych-strechach'
+                        'link' => $this->generator->generate('service_detail', ['slug' => 'zjistovani-vlhkosti-v-plochych-strechach'])
                     ]
                 ]
             ],
@@ -61,15 +66,15 @@ class NavbarDataset
                 'dropdown' => [
                     [
                         'name' => 'Školení firem a majitelů nemovitostí',
-                        'link' => '/sluzby/skoleni-firem-a-majitelu-nemovitosti'
+                        'link' => $this->generator->generate('service_detail', ['slug' => 'skoleni-firem-a-majitelu-nemovitosti'])
                     ],
                     [
                         'name' => 'Znalecký posudek na střechu',
-                        'link' => '/sluzby/znalecky-posudek-na-strechu'
+                        'link' => $this->generator->generate('service_detail', ['slug' => 'znalecky-posudek-na-strechu'])
                     ],
                     [
                         'name' => 'Odborný posudek na střechu',
-                        'link' => '/sluzby/odborny-posudek-na strechu'
+                        'link' => $this->generator->generate('service_detail', ['slug' => 'odborny-posudek-na strechu'])
                     ],
                 ]
             ],
@@ -80,32 +85,32 @@ class NavbarDataset
                 'dropdown' => [
                     [
                         'name' => 'Povinné kontroly plochých střech',
-                        'link' => '/sluzby/povinne-kontroly-plochych-strech'
+                        'link' => $this->generator->generate('service_detail', ['slug' => 'povinne-kontroly-plochych-strech'])
                     ],
                     [
                         'name' => 'Doporučený servis plochých střech',
-                        'link' => '/sluzby/doporuceny-servis-plochych-strech'
+                        'link' => $this->generator->generate('service_detail', ['slug' => 'doporuceny-servis-plochych-strech'])
                     ],
                     [
                         'name' => 'Typy střech',
-                        'link' => '/sluzby/typy-strech'
+                        'link' => $this->generator->generate('service_detail', ['slug' => 'typy-strech'])
                     ],
                     [
                         'name' => 'Lokalizační technologie',
-                        'link' => '/lokalizacni-technologie'
+                        'link' => $this->generator->generate('technology_list')
                     ],
                 ]
             ],
             
             [
                 'name' => 'Reference',
-                'link' => '/reference',
+                'link' => $this->generator->generate('reference_list_home'),
                 'dropdown' => null
             ],
             
             [
                 'name' => 'O mně',
-                'link' => '/aktuality/o-mne',
+                'link' => $this->generator->generate('news_detail', ['slug' => 'o-mne']),
                 'dropdown' => null
             ],
             

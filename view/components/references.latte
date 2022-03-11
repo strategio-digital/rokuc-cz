@@ -4,16 +4,16 @@
  *}
 
 {varType ContentioSdk\Component\AssetLoader $assets}
-{varType Strategio\Controller\HomeController $controller}
+{varType Strategio\Controller\Base\BaseController $controller}
 
 <div class="grid sm:grid-cols-3 gap-5 lg:gap-7 mt-10 lg:mt-16 justify-center">
     {for $i = 0; $i < 3; $i++}
-        <a class="max-w-[400px] sm:max-w-full" href="{$controller->link('/reference/slug')}">
+        <a class="max-w-[400px] sm:max-w-full" href="{$controller->link('reference_detail', ['slug' => 'reference-detail'])}">
             <div class="bg-gray-50 p-6">
                 <img src="https://dummyimage.com/400x300" alt="...">
             </div>
             <div class="px-6 mt-5">
-                {if $controller->request->getPathInfo() === '/'}
+                {if $controller->request->getPathInfo() === $controller->link('home')}
                     <h3 class="text-lg mt-6">Lokalizace netěsnosti a další servis</h3>
                 {else}
                     <h2 class="text-xl">Lokalizace netěsnosti a další servis</h2>

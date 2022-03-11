@@ -4,7 +4,7 @@
  *}
 
 {varType ContentioSdk\Component\AssetLoader $assets}
-{varType Strategio\Controller\HomeController $controller}
+{varType Strategio\Controller\NewsController $controller}
 
 {extends './../@layout.latte'}
 
@@ -28,13 +28,13 @@
             <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-5 lg:gap-7 mt-10 lg:mt-16 justify-center">
                 {for $i = 0; $i < 9; $i++}
                     <div class="shadow lg:shadow-md max-w-[400px] sm:max-w-full">
-                        <a href="{$controller->link('/aktuality/slug')}" class="bg-gray-50 p-6 block">
+                        <a href="{$controller->link('news_detail', ['slug' => 'test'])}" class="bg-gray-50 p-6 block">
                             <img src="https://dummyimage.com/400x300" alt="...">
                         </a>
                         <div class="p-6">
                             <h2 class="text-xl">Netěsnosti plochých střech</h2>
                             <p class="mt-3 mb-5 text-gray-500">Oprava netěsností a další servis je především určen pro širokou veřejnost. Jedná se o majitele rodinných domů...</p>
-                            <a href="{$controller->link('/aktuality/slug')}" class="btn-gold-outline">Přečíst více</a>
+                            <a href="{$controller->link('news_detail', ['slug' => 'test'])}" class="btn-gold-outline">Přečíst více</a>
                         </div>
                     </div>
                 {/for}
