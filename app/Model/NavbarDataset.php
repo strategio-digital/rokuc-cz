@@ -74,7 +74,7 @@ class NavbarDataset
                     ],
                     [
                         'name' => 'Odborný posudek na střechu',
-                        'link' => $this->generator->generate('service_detail', ['slug' => 'odborny-posudek-na strechu'])
+                        'link' => $this->generator->generate('service_detail', ['slug' => 'odborny-posudek-na-strechu'])
                     ],
                 ]
             ],

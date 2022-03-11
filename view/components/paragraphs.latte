@@ -3,6 +3,10 @@
  * @author Jiří Zapletal (https://strategio.digital, jz@strategio.digital)
  *}
 
+{varType ContentioSdk\Component\AssetLoader $assets}
+{varType Strategio\Controller\Base\BaseController $controller}
+{varType array $data}
+
 <article class="prose prose-indigo prose-lg text-gray-500 mx-auto">
     {foreach $data['item']['paragraphs'] as $paragraph}
         <h2 n:if="$paragraph['title']">{$paragraph['title']}</h2>
