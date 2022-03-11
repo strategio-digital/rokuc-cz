@@ -5,10 +5,11 @@
 
 {varType ContentioSdk\Component\AssetLoader $assets}
 {varType Strategio\Controller\HomeController $controller}
+{varType array $data}
 
 <div class="relative mt-10 lg:mt-20">
     <div class="absolute w-full bg-gray-100 h-[300px]">
-        <!--img class="w-full h-full object-cover" src="{$assets->get('/img/home-hero-bg.jpg')}" alt="Odborník na lokalizace netěsností plochých střech"-->
+        {*<img class="w-full h-full object-cover" src="{$assets->get('/img/home-hero-bg.jpg')}" alt="Odborník na lokalizace netěsností plochých střech">*}
     </div>
     <div class="relative container mx-auto py-10 lg:py-20 px-4 z-10">
         <div class="sm:text-center">
@@ -24,10 +25,10 @@
             </button>
             <div class="bg-white shadow p-5 w-3/4">
                 <div id="videoSlider">
-                    {foreach ['https://youtu.be/IL8oj9YS7Bs', 'https://youtu.be/0DV7g1YyxyI'] as $key}
-                        <div>
+                    {foreach $data['videos']['items'] as $item}
+                        <div n:if="$item['videoLink']">
                             <div class="aspect-w-16 aspect-h-9">
-                                <iframe src="https://www.youtube.com/embed/{$key|replace:'https://youtu.be/'}" frameborder="0" allow="clipboard-write; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+                                <iframe src="https://www.youtube.com/embed/{$item['videoLink']|replace:'https://youtu.be/'}" frameborder="0" allow="clipboard-write; encrypted-media; picture-in-picture" allowfullscreen></iframe>
                             </div>
                         </div>
                     {/foreach}

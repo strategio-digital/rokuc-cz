@@ -5,6 +5,9 @@
 
 {varType ContentioSdk\Component\AssetLoader $assets}
 {varType Strategio\Controller\HomeController $controller}
+{varType array $data}
+
+{dump $data}
 
 <div class="relative mt-10 lg:mt-20" id="sluzby">
     <div class="absolute w-full bg-gray-100 h-[300px]">
@@ -17,17 +20,24 @@
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 mt-16 lg:mt-20 gap-x-10 gap-y-16">
-            {for $i = 0; $i < 15; $i++}
+            {foreach $data['services']['items'] as $item}
                 <div class="bg-white shadow p-5 relative">
-                    <a href="{$controller->link('service_detail', ['slug' => 'lokalizace-a-netesnosti-a-dalsi-servis'])}" class="block text-blue-light hover:text-rose-800">
-                        <img src="https://dummyimage.com/70" alt="..." class="rounded-full absolute top-[-35px]">
-                        <h3 class="text-lg mt-6 font-bold">Lokalizace netěsnosti a další servis</h3>
+                    <a href="{$controller->link('service_detail', ['slug' => $item['slug']])}" class="block text-blue-light hover:text-rose-800">
+                        {var $file = current(array_filter($item['files'], fn(array $file) => $file['cover'] === true))}
+                        {if $file && Nette\Utils\Strings::startsWith($file['mimeType'], 'image/')}
+                            <img src="{$file['objectUrl']}" alt="{$item['title']}" class="rounded-full absolute top-[-35px] w-[70px] h-[70px]">
+                        {else}
+                            <img src="https://dummyimage.com/70" alt="{$item['title']}" class="rounded-full absolute top-[-35px]">
+                        {/if}
+
+                        <h3 class="text-lg mt-6 font-bold">{$item['title']}</h3>
+
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mt-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                         </svg>
                     </a>
                 </div>
-            {/for}
+            {/foreach}
         </div>
     </div>
 </div>
