@@ -5,12 +5,13 @@
 
 {varType ContentioSdk\Component\AssetLoader $assets}
 {varType Strategio\Controller\TechnologyController $controller}
+{varType string $data}
 
 {extends './../@layout.latte'}
 
 {block head}
     <title>Lokalizační technologie</title>
-    <meta name="description" content="...">
+    <meta name="description" content="Metody, technologie a přístroje, které používám pro odhalení netěsností u plochých střech">
     {include parent}
 {/block}
 
@@ -25,21 +26,27 @@
     </div>
 
     <div class="container mx-auto pb-10 lg:pt-10 lg:pb-20 px-4 z-10 md:max-w-3xl lg:max-w-4xl 2xl:max-w-5xl">
-        <div class="flex flex-col sm:flex-row gap-5 md:gap-10 items-center mt-10" n:foreach="['', '', '', ''] as $i">
-            <div n:class="'sm:w-1/2 flex', $iterator->isEven() ? 'sm:order-last sm:justify-end'">
-                <div class="bg-gray-50 p-6">
-                    <img src="https://dummyimage.com/600x500" alt="...">
+        {foreach $data['items'] as $item}
+            <div class="flex flex-col sm:flex-row gap-5 md:gap-10 items-center mt-10">
+                <div n:class="'sm:w-1/2 flex', $iterator->isEven() ? 'sm:order-last sm:justify-end'">
+
+                    <div class="bg-gray-50 p-6">
+                        {var $file = current(array_filter($item['files'], fn(array $file) => $file['cover'] === true))}
+                        {if $file && Nette\Utils\Strings::startsWith($file['mimeType'], 'image/')}
+                            <img src="{$file['objectUrl']}" alt="{$item['title']}">
+                        {else}
+                            <img src="https://dummyimage.com/600x500" alt="{$item['title']}">
+                        {/if}
+                    </div>
+                </div>
+                <div class="sm:w-1/2">
+                    <h2 class="text-3xl mb-5">{$item['title']}</h2>
+                    <p class="text-gray-500 leading-7">
+                        {$item['descriptionShort']}
+                    </p>
+                    <a href="{$controller->link('technology_detail', ['slug' => $item['slug']])}" class="btn-gold-outline mt-5">Více informací</a>
                 </div>
             </div>
-            <div class="sm:w-1/2">
-                <h2 class="text-3xl mb-5">Jiskrová zkouška</h2>
-                <p class="text-gray-500 leading-7">
-                    Jiskrová zkouška detekuje i ty nejmenší kapilární netěsnosti. Tuto techniku nasazujeme zejména na
-                    suchých plochách střech, kde by dodatečné zavlažování bylo obtížné. Příčiny zatékání do střechy jsou
-                    přesně zjistitelné vizuálně jiskrovým výbojem i akustickou indikací přístroje
-                </p>
-                <a href="{$controller->link('/technologie/jiskrova-zkouska')}" class="btn-gold-outline mt-5">Více informací</a>
-            </div>
-        </div>
+        {/foreach}
     </div>
 {/block}

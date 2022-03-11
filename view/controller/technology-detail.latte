@@ -5,12 +5,13 @@
 
 {varType ContentioSdk\Component\AssetLoader $assets}
 {varType Strategio\Controller\TechnologyController$controller}
+{varType array $data}
 
 {extends './../@layout.latte'}
 
 {block head}
-    <title>Lokalizace a zkouška netěsností</title>
-    <meta name="description" content="...">
+    <title>{$data['item']['seoTitle'] ?: $data['item']['title']}</title>
+    <meta name="description" content="{$data['item']['seoDescription'] ?: $data['item']['descriptionShort']}">
     {include parent}
 {/block}
 
@@ -18,5 +19,5 @@
     {include './../components/header.latte' title: 'Lokalizační technologie'}
     {include './../components/service-content.latte'}
     {include './../components/gallery.latte'}
-    {include './../components/prev-next.latte' title: 'technologie'}
+    {include './../components/prev-next.latte' title: 'technologie', routeName: 'technology_detail'}
 {/block}
