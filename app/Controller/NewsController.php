@@ -13,7 +13,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class NewsController extends BaseController
 {
-    const NEWS_LABEL = 'aktuality';
+    const ARTICLE_LABEL = 'aktuality';
     
     #[Template(path: __DIR__ . '/../../view/controller/news.latte')]
     public function index(string $page = '1'): void
@@ -22,12 +22,12 @@ class NewsController extends BaseController
             $this->redirect($this->link('news_list_home'));
         }
         
-        $this->addRequest('article_list', 'POST', "article/show-all", [
+        $this->addRequest('news_list', 'POST', "article/show-all", [
             'json' => [
                 'currentPage' => (int)$page,
                 'itemsPerPage' => 12,
                 'desc' => true,
-                'labels' => [self::NEWS_LABEL],
+                'labels' => [self::ARTICLE_LABEL],
                 'suppressLabels' => true,
                 'suppressFiles' => false,
                 'suppressParagraphs' => true,
@@ -35,8 +35,8 @@ class NewsController extends BaseController
             ]
         ]);
         
-        $responses = $this->dispatchRequests('Article List');
-        $response = $responses['article_list'];
+        $responses = $this->dispatchRequests('News List');
+        $response = $responses['news_list'];
         $contents = $response->getBody()->getContents();
         
         if ($response->getStatusCode() !== Response::HTTP_OK) {
@@ -49,7 +49,7 @@ class NewsController extends BaseController
     #[Template(path: __DIR__ . '/../../view/controller/news-detail.latte')]
     public function detail(string $slug): void
     {
-        $this->addRequest('article', 'POST', "article/show-one", [
+        $this->addRequest('news_detail', 'POST', "article/show-one", [
             'json' => [
                 'slug' => $slug,
                 'suppressLabels' => true,
@@ -58,12 +58,12 @@ class NewsController extends BaseController
                 'suppressParagraphFiles' => false,
                 'suppressPrevNext' => false,
                 'suppressPrevNextFiles' => false,
-                'prevNextByLabel' => self::NEWS_LABEL
+                'prevNextByLabel' => self::ARTICLE_LABEL
             ]
         ]);
         
-        $responses = $this->dispatchRequests('Article Detail');
-        $response = $responses['article'];
+        $responses = $this->dispatchRequests('News Detail');
+        $response = $responses['news_detail'];
         $contents = $response->getBody()->getContents();
         
         if ($response->getStatusCode() !== Response::HTTP_OK) {

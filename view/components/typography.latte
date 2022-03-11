@@ -1,0 +1,25 @@
+{*
+ * Copyright (c) 2022 Strategio Digital s.r.o.
+ * @author Jiří Zapletal (https://strategio.digital, jz@strategio.digital)
+ *}
+
+<article class="prose prose-indigo prose-lg text-gray-500 mx-auto">
+    {foreach $data['item']['paragraphs'] as $paragraph}
+        <h2 n:if="$paragraph['title']">{$paragraph['title']}</h2>
+
+        {$paragraph['description']|noescape}
+
+        <div n:if="$paragraph['videoLink']" class="rounded-lg overflow-hidden border-[1px] border-gray-300">
+            <div class="aspect-w-16 aspect-h-9">
+                <iframe src="https://www.youtube.com/embed/{$paragraph['videoLink']|replace:'https://youtu.be/'}" frameborder="0" allow="clipboard-write; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        {foreach $paragraph['files'] as $file}
+            <figure n:if="Nette\Utils\Strings::startsWith($file['mimeType'], 'image/')">
+                <img class="w-full rounded-lg" src="{$file['objectUrl']}" alt="{$file['description']}">
+                <figcaption n:if="$file['description']">{$file['description']}</figcaption>
+            </figure>
+        {/foreach}
+    {/foreach}
+</article>

@@ -5,8 +5,14 @@
 
 {varType ContentioSdk\Component\AssetLoader $assets}
 {varType Strategio\Controller\Base\BaseController $controller}
+{varType array $data}
+{varType array $files}
+{varType array $file}
 
-<div class="relative">
+{php $files = array_filter($data['item']['files'], fn($file) => Nette\Utils\Strings::startsWith($file['mimeType'], 'image/'))}
+{php $files = array_filter($files, fn($file) => $file['cover'] !== true)}
+
+<div n:if="count($files) !== 0" class="relative">
     <div class="absolute w-full bg-gray-100 h-[300px]">
         {*<img class="w-full h-full object-cover" src="{$assets->get('/img/home-hero-bg.jpg')}" alt="...">*}
     </div>
@@ -15,15 +21,15 @@
             <div class="text-3xl font-serif mb-5">Galerie</div>
             <h2 class="text-lg">Kontrola vodotěsnosti hydroizolace fóliové střechy</h2>
         </div>
-
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 lg:gap-7 mt-10 lg:mt-16 justify-center" data-gallery-container>
-            {for $i = 0; $i < 12; $i++}
-                <a href="https://dummyimage.com/1200x600" class="max-w-[400px] sm:max-w-full" title="&nbsp;">
-                    <div class="bg-gray-50 p-3 sm:p-6">
-                        <img src="https://dummyimage.com/400x300">
+            {foreach $files as $file}
+                <a href="{$file['objectUrl']}" class="max-w-[400px] sm:max-w-full" title="{$file['description'] ?: ' '}">
+                    <div class="relative bg-gray-50 p-3 sm:p-6">
+                        {* 400x300 *}
+                        <img src="{$file['objectUrl']}" alt="{$file['description']}">
                     </div>
                 </a>
-            {/for}
+            {/foreach}
         </div>
     </div>
 </div>

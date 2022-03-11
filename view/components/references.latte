@@ -5,21 +5,32 @@
 
 {varType ContentioSdk\Component\AssetLoader $assets}
 {varType Strategio\Controller\Base\BaseController $controller}
+{varType array $data}
 
 <div class="grid sm:grid-cols-3 gap-5 lg:gap-7 mt-10 lg:mt-16 justify-center">
-    {for $i = 0; $i < 3; $i++}
-        <a class="max-w-[400px] sm:max-w-full" href="{$controller->link('reference_detail', ['slug' => 'reference-detail'])}">
-            <div class="bg-gray-50 p-6">
-                <img src="https://dummyimage.com/400x300" alt="...">
+    {foreach $data['items'] as $item}
+        <a class="max-w-[400px] sm:max-w-full" href="{$controller->link('reference_detail', ['slug' => $item['slug']])}">
+            {var $file = current(array_filter($item['files'], fn(array $file) => $file['cover'] === true))}
+            <div class="relative bg-gray-50 p-6 block">
+                {if $file && Nette\Utils\Strings::startsWith($file['mimeType'], 'image/')}
+                    <img src="{$file['objectUrl']}" alt="{$item['title']}">
+                {else}
+                    <img src="https://dummyimage.com/400x300" alt="{$item['title']}">
+                {/if}
             </div>
             <div class="px-6 mt-5">
                 {if $controller->request->getPathInfo() === $controller->link('home')}
-                    <h3 class="text-lg mt-6">Lokalizace netěsnosti a další servis</h3>
+                    <h3 class="text-lg mt-6">{$item['title']}</h3>
                 {else}
-                    <h2 class="text-xl">Lokalizace netěsnosti a další servis</h2>
+                    <h2 class="text-xl">{$item['title']}</h2>
                 {/if}
-                <p class="mt-5 text-gray-500">„Chtěla bych panu Kučerovi velice poděkovat, jelikož jsme díky němu ušetřili nemalé peníze a také vyřešili problémy s nekvalitním zhotovitelem střechy.“</p>
+
+                {if $item['descriptionExtra']}
+                    <p class="mt-5 text-gray-500">„{$item['descriptionShort']}“</p>
+                {else}
+                    <p class="mt-5 text-gray-500">{$item['descriptionShort']}</p>
+                {/if}
             </div>
         </a>
-    {/for}
+    {/foreach}
 </div>
