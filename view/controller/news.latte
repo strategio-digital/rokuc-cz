@@ -5,6 +5,7 @@
 
 {varType ContentioSdk\Component\AssetLoader $assets}
 {varType Strategio\Controller\NewsController $controller}
+{varType array $data}
 
 {extends './../@layout.latte'}
 
@@ -26,21 +27,28 @@
             </div>
 
             <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-5 lg:gap-7 mt-10 lg:mt-16 justify-center">
-                {for $i = 0; $i < 9; $i++}
+                {foreach $data['items'] as $item}
                     <div class="shadow lg:shadow-md max-w-[400px] sm:max-w-full">
-                        <a href="{$controller->link('news_detail', ['slug' => 'test'])}" class="bg-gray-50 p-6 block">
-                            <img src="https://dummyimage.com/400x300" alt="...">
+                        {var $file = current(array_filter($item['files'], fn(array $file) => $file['cover'] === true))}
+
+                        <a href="{$controller->link('news_detail', ['slug' => $item['slug']])}" class="relative bg-gray-50 p-6 block">
+                            {if $file && Nette\Utils\Strings::startsWith($file['mimeType'], 'image/')}
+                                <img src="{$file['objectUrl']}" alt="{$item['title']}">
+                            {else}
+                                <img src="https://dummyimage.com/400x300" alt="{$item['title']}">
+                            {/if}
                         </a>
+
                         <div class="p-6">
-                            <h2 class="text-xl">Netěsnosti plochých střech</h2>
-                            <p class="mt-3 mb-5 text-gray-500">Oprava netěsností a další servis je především určen pro širokou veřejnost. Jedná se o majitele rodinných domů...</p>
-                            <a href="{$controller->link('news_detail', ['slug' => 'test'])}" class="btn-gold-outline">Přečíst více</a>
+                            <h2 class="text-xl">{$item['title']}</h2>
+                            <p class="mt-3 mb-5 text-gray-500">{$item['descriptionShort']}</p>
+                            <a href="{$controller->link('news_detail', ['slug' => $item['slug']])}" class="btn-gold-outline">Přečíst více</a>
                         </div>
                     </div>
-                {/for}
+                {/foreach}
             </div>
 
-            {include './../components/paginator.latte'}
+            {include './../components/paginator.latte', routeName: 'news_list'}
         </div>
     </div>
 {/block}
