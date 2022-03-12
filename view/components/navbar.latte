@@ -7,6 +7,9 @@
 {varType ContentioSdk\Component\AssetLoader $assets}
 {varType Strategio\Model\NavbarDataset $navbar}
 
+{var $currentUri = $controller->request->getRequestUri()}
+{var $currentRootUri = '/' . explode('/', $currentUri)[1]}
+
 <div x-data="{ active: 1, iterator: 0, mobileOpen: window.innerWidth >= 1280, w: window.innerWidth }"
      @resize.window="if(w !== window.innerWidth) { mobileOpen = window.innerWidth >= 1280; w = window.innerWidth}"
      id="topNavbar"
@@ -27,19 +30,17 @@
 
         <div class="pt-3 xl:pt-0" x-show="mobileOpen" @click.outside="active = false; mobileOpen = window.innerWidth >= 1280">
             {foreach $navbar->topNavbar() as $item}
+                {varType array $dropdown}
+                {var $inDropdown = count(array_filter($item['dropdown'] ?: [], fn($dropdown) => $dropdown['link'] === $currentUri)) !== 0}
                 <div class="relative xl:inline-block text-left z-30 xl:pl-4" x-data="{ id: ++iterator, get expanded() { return this.active === this.id }, set expanded(value) { this.active = value ? this.id : null } }">
-                    <a href="{$item['link']}" data-smooth-scroll=""
-                       {if $item['dropdown']}
-                           @click="if($event.currentTarget.href.endsWith('#')) { $event.preventDefault(); }  expanded = !expanded;"
-                       {else}
-                           @click="expanded = !expanded; if(window.innerWidth < 1280) mobileOpen = false"
-                       {/if}
-                        class="
-                            inline-flex align-center justify-end w-full
-                            py-3 xl:pt-[1.5rem] xl:pb-[1.8rem]
-                            text-white hover:text-gold-dark focus:text-gold-dark
-                            border-t-[1px] border-white/10 xl:border-t-4 xl:border-transparent xl:focus:border-gold-dark xl:hover:border-gold-dark
-                            transition duration-150 ease-out hover:ease-in"
+                    <a href="{$item['link']}" data-smooth-scroll n:class="
+                        'inline-flex align-center justify-end w-full',
+                        'py-3 xl:pt-[1.5rem] xl:pb-[1.8rem]',
+                        'text-white hover:text-gold-dark focus:text-gold-dark',
+                        'border-t-[1px] border-white/10 xl:border-t-4 xl:border-transparent xl:focus:border-gold-dark xl:hover:border-gold-dark',
+                        'transition duration-150 ease-out hover:ease-in',
+                        $currentRootUri === $item['link'] || $inDropdown || $item['link'] === $currentUri ? 'xl:border-gold-light text-gold-light' : ''"
+                       {if $item['dropdown']}@click="if($event.currentTarget.href.endsWith('#')) { $event.preventDefault(); }  expanded = !expanded;"{else}@click="expanded = !expanded; if(window.innerWidth < 1280) mobileOpen = false"{/if}
                     >
                         {$item['name']}
                         {if $item['dropdown']}
@@ -65,9 +66,9 @@
                         >
                             <div class="xl:divide-y-[1px] xl:divide-blue-light">
                                 {foreach $item['dropdown'] as $dropdown}
-                                    <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
-                                    <a href="{$dropdown['link']}" @click="if(window.innerWidth < 1280) mobileOpen = false"
-                                       class="block px-4 xl:px-4 py-2 xl:py-3 text-sm hover:text-gold-dark xl:hover:text-white xl:hover:bg-blue-light text-right xl:text-left">
+                                    <a href="{$dropdown['link']}"
+                                       @click="if(window.innerWidth < 1280) mobileOpen = false"
+                                       n:class="'block px-4 xl:px-4 py-2 xl:py-3 text-sm hover:text-gold-dark xl:hover:text-white xl:hover:bg-blue-light text-right xl:text-left', $dropdown['link'] === $currentUri ? 'text-gold-light'">
                                         {$dropdown['name']}
                                     </a>
                                 {/foreach}

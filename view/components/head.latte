@@ -7,7 +7,6 @@
 {varType Strategio\Controller\NewsController $controller}
 {varType array $data}
 
-{dump $data}
 <title>{$data['item']['seoTitle'] ?: $data['item']['title']}</title>
 <meta name="description" content="{$data['item']['seoDescription'] ?: $data['item']['descriptionShort']}">
 
