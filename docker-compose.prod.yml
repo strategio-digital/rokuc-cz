@@ -20,7 +20,5 @@ services:
       #VIRTUAL_HOST: rokuc.cz
       #LETSENCRYPT_HOST: rokuc.cz,www.rokuc.cz
       #VIRTUAL_HOST_ALIAS: www.rokuc.cz
-    ports:
-      - "8080:80"
     volumes:
       - $PWD:/var/www/html:cached
