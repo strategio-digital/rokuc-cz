@@ -6,6 +6,7 @@
 {varType ContentioSdk\Component\AssetLoader $assets}
 {varType Strategio\Controller\Base\BaseController $controller}
 {varType Strategio\Model\NavbarDataset $navbar}
+{varType Strategio\Model\ContactDataset $contact}
 
 <div class="bg-blue-light/90 text-white">
     <div class="container mx-auto relative px-4">
@@ -40,15 +41,15 @@
                     <div class="mt-1">Odborník na lokalizace netěsností plochých střech.</div>
                     <div class="mt-5">
                         <span class="font-bold">Facebook:</span>
-                        <a href="//fb.com/znalecrokuc" target="_blank" class="text-orange-200 hover:text-orange-300">fb.com/znalecrokuc</a>
+                        <a href="https://{$contact->get('facebook')}" target="_blank" class="text-orange-200 hover:text-orange-300">{$contact->get('facebook')}</a>
                     </div>
                     <div class="mt-1">
                         <span class="font-bold">E-mail:</span>
-                        <a href="mailto:roman@rokuc.cz" target="_blank" class="text-orange-200 hover:text-orange-300">roman@rokuc.cz</a>
+                        <a href="mailto:{$contact->get('mail')}" target="_blank" class="text-orange-200 hover:text-orange-300">{$contact->get('mail')}</a>
                     </div>
                     <div class="mt-1">
                         <span class="font-bold">Telefon:</span>
-                        <a href="tel:+420603258686" target="_blank" class="text-orange-200 hover:text-orange-300">+420 603 258 686</a>
+                        <a href="tel:+{$contact->get('phone')|replace:' '}" target="_blank" class="text-orange-200 hover:text-orange-300">{$contact->get('phone')}</a>
                     </div>
                     <div class="mt-5">
                         <a href="{$controller->link('news_detail', ['slug' => 'o-mne'])}" class="text-orange-200 hover:text-orange-300">Číst více o mně</a>

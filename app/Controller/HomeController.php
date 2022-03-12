@@ -16,7 +16,7 @@ class HomeController extends BaseController
     #[Template(path: __DIR__ . '/../../view/controller/home.latte')]
     public function index(): void
     {
-        $this->addRequest('service_list', 'POST', "article/show-all", [
+        $this->addRequest('service_list', 'POST', 'article/show-all', [
             'json' => [
                 'currentPage' => 1,
                 'itemsPerPage' => 100,
@@ -29,7 +29,7 @@ class HomeController extends BaseController
             ]
         ]);
     
-        $this->addRequest('reference_list', 'POST', "article/show-all", [
+        $this->addRequest('reference_list', 'POST', 'article/show-all', [
             'json' => [
                 'currentPage' => 1,
                 'itemsPerPage' => 3,
@@ -42,7 +42,7 @@ class HomeController extends BaseController
             ]
         ]);
     
-        $this->addRequest('video_list', 'POST', "article/show-all", [
+        $this->addRequest('video_list', 'POST', 'article/show-all', [
             'json' => [
                 'currentPage' => 1,
                 'itemsPerPage' => 100,
@@ -54,10 +54,24 @@ class HomeController extends BaseController
                 'suppressParagraphFiles' => true,
             ]
         ]);
+    
+        $this->addRequest('about_me', 'POST', 'article/show-one', [
+            'json' => [
+                'slug' => 'o-mne',
+                'suppressLabels' => true,
+                'suppressFiles' => false,
+                'suppressParagraphs' => true,
+                'suppressParagraphFiles' => true,
+                'suppressPrevNext' => true,
+                'suppressPrevNextFiles' => true,
+                'prevNextByLabel' => null
+            ]
+        ]);
         
         $responses = $this->dispatchRequests('Services, References, Videos');
     
         $this->template->data = [
+            'about_me' => $responses['about_me']->getStatusCode() === Response::HTTP_OK ? json_decode($responses['about_me']->getBody()->getContents(), true) : null,
             'services' => $responses['service_list']->getStatusCode() === Response::HTTP_OK ? json_decode($responses['service_list']->getBody()->getContents(), true) : [],
             'references' => $responses['reference_list']->getStatusCode() === Response::HTTP_OK ? json_decode($responses['reference_list']->getBody()->getContents(), true) : [],
             'videos' => $responses['video_list']->getStatusCode() === Response::HTTP_OK ? json_decode($responses['video_list']->getBody()->getContents(), true) : []

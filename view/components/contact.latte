@@ -5,6 +5,7 @@
 
 {varType ContentioSdk\Component\AssetLoader $assets}
 {varType Strategio\Controller\Base\BaseController $controller}
+{varType Strategio\Model\ContactDataset $contact}
 
 <div class="relative" id="kontakt">
     <div class="absolute w-full bg-gray-100 h-[240px] lg:h-[300px]">
@@ -24,32 +25,32 @@
                     <div class="mt-10">
                         <div>Telefon</div>
                         <div class="mt-1">
-                            <a href="tel:+420603258686" target="_blank" class="text-3xl font-bold text-red-700 hover:text-red-800">+420 603 258 686</a>
+                            <a href="tel:+{$contact->get('phone')|replace:' '}" target="_blank" class="text-3xl font-bold text-red-700 hover:text-red-800">{$contact->get('phone')}</a>
                         </div>
                     </div>
                     <div class="mt-10">
                         <div>E-mail</div>
                         <div class="mt-1">
-                            <a href="mailto:roman@rokuc.cz" target="_blank" class="text-3xl font-bold text-red-700 hover:text-red-800">roman@rokuc.cz</a>
+                            <a href="mailto:{$contact->get('mail')}" target="_blank" class="text-3xl font-bold text-red-700 hover:text-red-800">{$contact->get('mail')}</a>
                         </div>
                     </div>
                     <div class="mt-10">
                         <div class="text-2xl">Kde mě naleznete</div>
                         <div class="mt-1">
                             <div>Roman Kučera</div>
-                            <div>Chlebov 60, 329 01 Soběslav</div>
+                            <div>{$contact->get('address')}</div>
                             <div>
-                                Otevřít <a href="https://goo.gl/maps/cfPs4VgMUgN2" target="_blank" class="text-red-700 hover:text-red-800">Google Mapy</a>
-                                nebo <a href="https://en.mapy.cz/s/3qcRt" target="_blank" class="text-red-700 hover:text-red-800">Mapy.cz</a>
+                                Otevřít <a href="{$contact->get('google_maps')}" target="_blank" class="text-red-700 hover:text-red-800">Google Mapy</a>
+                                nebo <a href="{$contact->get('mapy_cz')}" target="_blank" class="text-red-700 hover:text-red-800">Mapy.cz</a>
                             </div>
                         </div>
                     </div>
                     <div class="mt-10">
                         <div class="text-2xl">Fakturační údaje</div>
                         <div class="mt-1">
-                            <div><span class="font-bold">IČO:</span> 12906590</div>
-                            <div><span class="font-bold">DIČ:</span> CZ7102101721</div>
-                            <div><span class="font-bold">Číslo účtu:</span> 259997364/0300</div>
+                            <div><span class="font-bold">IČO:</span> {$contact->get('id')}</div>
+                            <div><span class="font-bold">DIČ:</span> {$contact->get('vat_id')}</div>
+                            <div><span class="font-bold">Číslo účtu:</span> {$contact->get('bank_account')}</div>
                         </div>
                     </div>
                 </div>

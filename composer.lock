@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d6b03dd692c978614cdb74fa9c3d921e",
+    "content-hash": "e0bd152104219c63e20ff922a5c5b62a",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -1111,16 +1111,16 @@
         },
         {
             "name": "strategio/contentio-sdk",
-            "version": "dev-develop",
+            "version": "v0.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/strategio-digital/contentio-sdk.git",
-                "reference": "9b6c4c5c0f6fb202e21d5d8fbf05f3f8a7a73b36"
+                "reference": "75c1d6a820bcc4f9fd4fdf4a2f8392e89fed873a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/strategio-digital/contentio-sdk/zipball/9b6c4c5c0f6fb202e21d5d8fbf05f3f8a7a73b36",
-                "reference": "9b6c4c5c0f6fb202e21d5d8fbf05f3f8a7a73b36",
+                "url": "https://api.github.com/repos/strategio-digital/contentio-sdk/zipball/75c1d6a820bcc4f9fd4fdf4a2f8392e89fed873a",
+                "reference": "75c1d6a820bcc4f9fd4fdf4a2f8392e89fed873a",
                 "shasum": ""
             },
             "require": {
@@ -1157,9 +1157,9 @@
             "description": "PHP SDK for Contentio CRM websites",
             "support": {
                 "issues": "https://github.com/strategio-digital/contentio-sdk/issues",
-                "source": "https://github.com/strategio-digital/contentio-sdk/tree/develop"
+                "source": "https://github.com/strategio-digital/contentio-sdk/tree/v0.0.3"
             },
-            "time": "2022-03-11T14:06:57+00:00"
+            "time": "2022-03-12T18:18:58+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
@@ -1684,9 +1684,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "strategio/contentio-sdk": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
