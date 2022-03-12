@@ -1,0 +1,26 @@
+version: '3'
+
+networks:
+  nginx_proxy_network:
+    external:
+      name: nginx_proxy_network
+
+services:
+  app:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    restart: "always"
+    networks:
+      - nginx_proxy_network
+    environment:
+      TZ: ${APP_TIME_ZONE}
+      VIRTUAL_HOST: dev.rokuc.cz
+      LETSENCRYPT_HOST: dev.rokuc.cz
+      #VIRTUAL_HOST: rokuc.cz
+      #LETSENCRYPT_HOST: rokuc.cz,www.rokuc.cz
+      #VIRTUAL_HOST_ALIAS: www.rokuc.cz
+    ports:
+      - "8080:80"
+    volumes:
+      - $PWD:/var/www/html:cached
