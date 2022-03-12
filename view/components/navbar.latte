@@ -4,6 +4,7 @@
  *}
 
 {varType Strategio\Controller\Base\BaseController $controller}
+{varType ContentioSdk\Component\AssetLoader $assets}
 {varType Strategio\Model\NavbarDataset $navbar}
 
 <div x-data="{ active: 1, iterator: 0, mobileOpen: window.innerWidth >= 1280, w: window.innerWidth }"
@@ -14,7 +15,7 @@
     <div class="container mx-auto px-4 xl:flex justify-between items-center">
         <div class="flex justify-between items-center">
             <a href="{$controller->link('home')}">
-                <img src="https://dummyimage.com/240x70" class="h-[30px] xl:h-auto">
+                <img src="{$assets->get('/img/rokuc-logo.svg')}" class="h-[30px] xl:h-[70px]" alt="Roman Kučera">
             </a>
             <button class="text-white hover:text-gold-light transition duration-150 ease-out hover:ease-in flex xl:hidden" @click="mobileOpen = !mobileOpen">
                 <span class="mr-2">menu</span>

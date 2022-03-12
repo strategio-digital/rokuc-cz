@@ -1,0 +1,18 @@
+{*
+ * Copyright (c) 2022 Strategio Digital s.r.o.
+ * @author Jiří Zapletal (https://strategio.digital, jz@strategio.digital)
+ *}
+
+{varType ContentioSdk\Component\AssetLoader $assets}
+{varType Strategio\Controller\NewsController $controller}
+{varType array $data}
+
+{dump $data}
+<title>{$data['item']['seoTitle'] ?: $data['item']['title']}</title>
+<meta name="description" content="{$data['item']['seoDescription'] ?: $data['item']['descriptionShort']}">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="{$controller->request->getRequestUri()}">
+<meta property="og:title" content="{$data['item']['openGraphTitle'] ?: $data['item']['seoTitle'] ?: $data['item']['title']}">
+<meta property="og:description" content="{$data['item']['openGraphDescription'] ?: $data['item']['seoDescription'] ?: $data['item']['descriptionShort']}">
+{*<meta property="og:image" content="{$assets->get('/img/default-og.png')}">*}
