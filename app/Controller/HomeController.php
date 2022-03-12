@@ -68,7 +68,7 @@ class HomeController extends BaseController
             ]
         ]);
         
-        $responses = $this->dispatchRequests('Services, References, Videos');
+        $responses = $this->dispatchRequests('Homepage');
     
         $this->template->data = [
             'about_me' => $responses['about_me']->getStatusCode() === Response::HTTP_OK ? json_decode($responses['about_me']->getBody()->getContents(), true) : null,
