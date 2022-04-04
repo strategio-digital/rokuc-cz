@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e0bd152104219c63e20ff922a5c5b62a",
+    "content-hash": "feff5b47fa1eba30941bf724ecc90d45",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -1111,16 +1111,16 @@
         },
         {
             "name": "strategio/contentio-sdk",
-            "version": "v0.0.3",
+            "version": "v0.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/strategio-digital/contentio-sdk.git",
-                "reference": "75c1d6a820bcc4f9fd4fdf4a2f8392e89fed873a"
+                "reference": "ee51c47ee687a9cc1b59c20ebb387ad1f117b8b7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/strategio-digital/contentio-sdk/zipball/75c1d6a820bcc4f9fd4fdf4a2f8392e89fed873a",
-                "reference": "75c1d6a820bcc4f9fd4fdf4a2f8392e89fed873a",
+                "url": "https://api.github.com/repos/strategio-digital/contentio-sdk/zipball/ee51c47ee687a9cc1b59c20ebb387ad1f117b8b7",
+                "reference": "ee51c47ee687a9cc1b59c20ebb387ad1f117b8b7",
                 "shasum": ""
             },
             "require": {
@@ -1157,9 +1157,9 @@
             "description": "PHP SDK for Contentio CRM websites",
             "support": {
                 "issues": "https://github.com/strategio-digital/contentio-sdk/issues",
-                "source": "https://github.com/strategio-digital/contentio-sdk/tree/v0.0.3"
+                "source": "https://github.com/strategio-digital/contentio-sdk/tree/v0.0.4"
             },
-            "time": "2022-03-12T18:18:58+00:00"
+            "time": "2022-04-03T21:17:50+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
