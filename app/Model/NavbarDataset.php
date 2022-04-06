@@ -56,7 +56,31 @@ class NavbarDataset
                     [
                         'name' => 'Zjišťování vlhkosti v plochých střechách',
                         'link' => $this->generator->generate('service_detail', ['slug' => 'zjistovani-vlhkosti-v-plochych-strechach'])
-                    ]
+                    ],
+                    [
+                        'name' => 'Kontrola těsnosti střech',
+                        'link' => $this->generator->generate('service_detail', ['slug' => 'kontrola-tesnosti-strech'])
+                    ],
+                    [
+                        'name' => 'Kontrola řemeslného provedení',
+                        'link' => $this->generator->generate('service_detail', ['slug' => 'kontrola-remeslneho-provedeni'])
+                    ],
+                    [
+                        'name' => 'Měření úniku tepla termokamerou z dronu',
+                        'link' => $this->generator->generate('service_detail', ['slug' => 'mereni-uniku-tepla-termokamerou-z-dronu'])
+                    ],
+                    [
+                        'name' => 'Správa a údržba plochých střech',
+                        'link' => $this->generator->generate('service_detail', ['slug' => 'sprava-a-udrzba-plochych-strech'])
+                    ],
+                    [
+                        'name' => 'Návrh ploché střechy a příprava stavby',
+                        'link' => $this->generator->generate('service_detail', ['slug' => 'navrh-ploche-strechy-a-priprava-stavby'])
+                    ],
+                    [
+                        'name' => 'Návrh bezpečnostního systému',
+                        'link' => $this->generator->generate('service_detail', ['slug' => 'navrh-bezpecnostniho-systemu'])
+                    ],
                 ]
             ],
             
@@ -76,6 +100,14 @@ class NavbarDataset
                         'name' => 'Odborný posudek na střechu',
                         'link' => $this->generator->generate('service_detail', ['slug' => 'odborny-posudek-na-strechu'])
                     ],
+                    [
+                        'name' => 'Kontrolní prohlídka nemovitosti před koupí',
+                        'link' => $this->generator->generate('service_detail', ['slug' => 'kontrolni-prohlidka-nemovitosti-pred-koupi'])
+                    ],
+                    [
+                        'name' => 'Poradenství v oblasti střech',
+                        'link' => $this->generator->generate('service_detail', ['slug' => 'poradenstvi-v-oblasti-strech'])
+                    ],
                 ]
             ],
             
@@ -83,6 +115,10 @@ class NavbarDataset
                 'name' => 'Průběh a užitečné informace',
                 'link' => '#',
                 'dropdown' => [
+                    [
+                        'name' => 'Lokalizační technologie',
+                        'link' => $this->generator->generate('technology_list')
+                    ],
                     [
                         'name' => 'Povinné kontroly plochých střech',
                         'link' => $this->generator->generate('service_detail', ['slug' => 'povinne-kontroly-plochych-strech'])
@@ -96,8 +132,28 @@ class NavbarDataset
                         'link' => $this->generator->generate('service_detail', ['slug' => 'typy-strech'])
                     ],
                     [
-                        'name' => 'Lokalizační technologie',
-                        'link' => $this->generator->generate('technology_list')
+                        'name' => 'Prvky střech',
+                        'link' => $this->generator->generate('service_detail', ['slug' => 'prvky-strech'])
+                    ],
+                    [
+                        'name' => 'Typy vad střech',
+                        'link' => $this->generator->generate('service_detail', ['slug' => 'typy-vad-strech'])
+                    ],
+                    [
+                        'name' => 'Typy zkoušek',
+                        'link' => $this->generator->generate('service_detail', ['slug' => 'typy-zkousek'])
+                    ],
+                    [
+                        'name' => 'Průběh zkoušky',
+                        'link' => $this->generator->generate('service_detail', ['slug' => 'prubeh-zkousky'])
+                    ],
+                    [
+                        'name' => 'Vyhodnocení zkoušky',
+                        'link' => $this->generator->generate('service_detail', ['slug' => 'vyhodnoceni-zkousky'])
+                    ],
+                    [
+                        'name' => 'Měřící technika',
+                        'link' => $this->generator->generate('service_detail', ['slug' => 'merici-technika'])
                     ],
                 ]
             ],

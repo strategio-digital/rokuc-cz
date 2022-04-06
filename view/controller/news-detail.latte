@@ -62,6 +62,8 @@
 
         {include './../components/gallery.latte'}
 
-        {include './../components/prev-next.latte' title: 'aktualita', routeName: 'news_detail'}
+        {if $data['item']['slug'] !== 'o-mne'}
+            {include './../components/prev-next.latte' title: 'aktualita', routeName: 'news_detail'}
+        {/if}
     </div>
 {/block}
