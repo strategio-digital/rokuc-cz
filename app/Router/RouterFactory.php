@@ -8,6 +8,7 @@ declare(strict_types=1);
 namespace Strategio\Router;
 
 use ContentioSdk\Router\BaseRouter;
+use Strategio\Controller\AboutMeController;
 use Strategio\Controller\HomeController;
 use Strategio\Controller\NewsController;
 use Strategio\Controller\ReferenceController;
@@ -21,6 +22,7 @@ class RouterFactory extends BaseRouter
     {
         $routes = parent::createRoutes();
         $this->add('home', '/', [HomeController::class, 'index']);
+        $this->add('about_me', '/o-mne', [AboutMeController::class, 'index']);
         
         $this->add('news_list_home', '/aktuality', [NewsController::class, 'index']);
         $this->add('news_list', '/aktuality/strana/{page<\d+>}', [NewsController::class, 'index']);

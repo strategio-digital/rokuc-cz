@@ -22,7 +22,7 @@ class NavbarDataset
     {
         return [
             ['name' => 'Domů', 'link' => $this->generator->generate('home')],
-            ['name' => 'O mně', 'link' => $this->generator->generate('news_detail', ['slug' => 'o-mne'])],
+            ['name' => 'O mně', 'link' => $this->generator->generate('about_me')],
             ['name' => 'Aktuality', 'link' => $this->generator->generate('news_list_home')],
             ['name' => 'Reference', 'link' => $this->generator->generate('reference_list_home')],
             ['name' => 'Kontakt', 'link' => '#kontakt']
@@ -166,7 +166,7 @@ class NavbarDataset
             
             [
                 'name' => 'O mně',
-                'link' => $this->generator->generate('news_detail', ['slug' => 'o-mne']),
+                'link' => $this->generator->generate('about_me'),
                 'dropdown' => null
             ],
             
