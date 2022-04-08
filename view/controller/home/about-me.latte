@@ -13,7 +13,9 @@
             <div class="absolute bg-blue-light h-full w-full right-[-20px] bottom-[-20px]"></div>
             {var $file = current(array_filter($data['about_me']['item']['files'], fn(array $file) => $file['cover'] === true))}
             {if $file && Nette\Utils\Strings::startsWith($file['mimeType'], 'image/')}
-                <img src="{$file['objectUrl']}" alt="{$data['about_me']['item']['title']}" class="relative">
+                <img width="625" height="445" alt="{$data['about_me']['item']['title']}" class="relative"
+                     data-img-path="{$file['filePath']}" data-img-params='{"method": "EXACT", "quality": 80, "size": {"width": 625, "height": 445}}'
+                >
             {else}
                 <img src="https://dummyimage.com/625x445" alt="{$data['about_me']['item']['title']}" class="relative">
             {/if}

@@ -12,8 +12,12 @@ import VideoSlider from "./components/VideoSlider";
 import SmoothScroll from "./components/SmoothScroll";
 import lightGallery from 'lightgallery';
 import lgThumbnail from 'lightgallery/plugins/thumbnail'
+import LazyThumb from "./components/LazyThumb";
 
 (() => {
+    // Lazy thumb
+    LazyThumb();
+
     // Alpine
     Alpine();
 
@@ -25,6 +29,7 @@ import lgThumbnail from 'lightgallery/plugins/thumbnail'
 
     // Scroll
     SmoothScroll();
+
 
     // Light gallery
     (Array.from(document.querySelectorAll('[data-gallery-container]')) as HTMLElement[]).forEach(node => {
