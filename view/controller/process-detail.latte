@@ -1,0 +1,63 @@
+{*
+ * Copyright (c) 2022 Strategio Digital s.r.o.
+ * @author Jiří Zapletal (https://strategio.digital, jz@strategio.digital)
+ *}
+
+{varType ContentioSdk\Component\AssetLoader $assets}
+{varType Strategio\Controller\ReferenceController $controller}
+{varType array $data}
+
+{extends './../@layout.latte'}
+
+{block head}
+    {include './../components/head.latte'}
+    {include parent}
+{/block}
+
+{block content}
+    <div class="relative w-full">
+        <div n:class="'absolute w-full bg-gray-100', $data['item']['descriptionExtra'] ? 'h-3/4' : 'h-full'"></div>
+        <div class="relative container mx-auto pt-24 xl:pt-[190px] z-10">
+            <div n:class="'md:text-center mb-10 xl:mb-16 px-4', $data['item']['descriptionExtra'] ?: 'pb-10 xl:pb-16'">
+                <div class="text-lg mb-1 text-gold-dark uppercase font-bold">Průběh a užitečné informace</div>
+                <h1 class="text-3xl md:text-4xl font-serif font-bold">{$data['item']['title']}</h1>
+            </div>
+            {if $data['item']['descriptionExtra']}
+                <div class="text-center mx-auto max-w-[760px] mb-10 lg:mb-16">
+                    <div class="mx-4 p-5 sm:p-10 shadow-md bg-white">
+                        <div class="text-xl mb-5">„{$data['item']['descriptionShort']}“</div>
+                        <div class="text-sm">{$data['item']['descriptionExtra']}</div>
+                    </div>
+                </div>
+            {/if}
+        </div>
+    </div>
+
+    <div n:if="count($data['item']['paragraphs']) !== 0" class="relative pb-10 lg:pb-20 bg-white overflow-hidden">
+        <div class="hidden lg:block lg:absolute lg:inset-y-0 lg:h-full lg:w-full">
+            <div class="relative h-full text-lg max-w-prose mx-auto" aria-hidden="true">
+                <svg class="absolute top-12 left-full transform translate-x-32" width="404" height="384" fill="none" viewBox="0 0 404 384">
+                    <defs>
+                        <pattern id="74b3fd99-0a6f-4271-bef2-e80eeafdf357" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                            <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor" />
+                        </pattern>
+                    </defs>
+                    <rect width="404" height="384" fill="url(#74b3fd99-0a6f-4271-bef2-e80eeafdf357)" />
+                </svg>
+                <svg class="absolute bottom-12 right-full transform -translate-x-32" width="404" height="384" fill="none" viewBox="0 0 404 384">
+                    <defs>
+                        <pattern id="d3eb07ae-5182-43e6-857d-35c643af9034" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                            <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor" />
+                        </pattern>
+                    </defs>
+                    <rect width="404" height="384" fill="url(#d3eb07ae-5182-43e6-857d-35c643af9034)" />
+                </svg>
+            </div>
+        </div>
+        <div class="relative px-4 md:px-6 lg:px-8">
+            {include './../components/paragraphs.latte'}
+        </div>
+    </div>
+
+    {include './../components/gallery.latte'}
+{/block}

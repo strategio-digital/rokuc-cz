@@ -11,6 +11,7 @@ use ContentioSdk\Router\BaseRouter;
 use Strategio\Controller\AboutMeController;
 use Strategio\Controller\HomeController;
 use Strategio\Controller\NewsController;
+use Strategio\Controller\ProcessController;
 use Strategio\Controller\ReferenceController;
 use Strategio\Controller\ServiceController;
 use Strategio\Controller\TechnologyController;
@@ -36,6 +37,8 @@ class RouterFactory extends BaseRouter
         
         $this->add('technology_list', '/lokalizacni-technologie', [TechnologyController::class, 'index']);
         $this->add('technology_detail', '/technologie/{slug}', [TechnologyController::class, 'detail']);
+    
+        $this->add('process_detail', '/prubeh-a-uzitecne-informace/{slug}', [ProcessController::class, 'detail']);
         
         return $routes;
     }
