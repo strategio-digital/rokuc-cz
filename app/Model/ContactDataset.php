@@ -20,12 +20,12 @@ class ContactDataset
             'phone' => '+420 603 258 686',
             'address' => 'Chlebov 60, 329 01 Soběslav',
             'facebook' => 'fb.com/znalecrokuc',
-            'youtube' => 'https://youtube.com/rokuc',
+            'youtube' => 'https://youtube.com/channel/UCmB_VRh-_Lid_v_ypmoHS6A',
             'google_maps' => 'https://goo.gl/maps/cfPs4VgMUgN2',
             'mapy_cz' => 'https://en.mapy.cz/s/3qcRt',
             'id' => '12906590',
             'vat_id' => 'CZ7102101721',
-            'bank_account' => '259997364/0300'
+            'bank_account' => '296468947/0300'
         ];
         
         return $data[$key];

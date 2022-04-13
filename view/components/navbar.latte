@@ -10,15 +10,15 @@
 {var $currentUri = $controller->request->getRequestUri()}
 {var $currentRootUri = '/' . explode('/', $currentUri)[1]}
 
-<div x-data="{ active: 1, iterator: 0, mobileOpen: window.innerWidth >= 1280, w: window.innerWidth }"
+<div x-data="{ active: null, iterator: 0, mobileOpen: window.innerWidth >= 1280, w: window.innerWidth }"
      @resize.window="if(w !== window.innerWidth) { mobileOpen = window.innerWidth >= 1280; w = window.innerWidth}"
      id="topNavbar"
      class="relative z-20 w-full bg-blue-dark border-b-2 border-gold-light py-3 xl:py-0"
      style="opacity: 0.98">
     <div class="container mx-auto px-4 xl:flex justify-between items-center">
         <div class="flex justify-between items-center">
-            <a href="{$controller->link('home')}">
-                <img src="{$assets->get('/img/rokuc-logo-gold.svg')}" class="h-[30px] xl:h-[60px] py-1" alt="Roman Kučera">
+            <a href="{$controller->link('home')}" class="block">
+                <img src="{$assets->get('/img/rokuc-logo-gold.svg')}" width="214" height="60" class="w-auto h-[30px] xl:h-[60px] py-1" alt="Roman Kučera">
             </a>
             <button class="text-white hover:text-gold-light transition duration-150 ease-out hover:ease-in flex xl:hidden" @click="mobileOpen = !mobileOpen">
                 <span class="mr-2">menu</span>
@@ -28,7 +28,7 @@
             </button>
         </div>
 
-        <div class="pt-3 xl:pt-0" x-show="mobileOpen" @click.outside="active = false; mobileOpen = window.innerWidth >= 1280">
+        <div class="pt-3 xl:pt-0" x-show="mobileOpen" @click.outside="active = false; mobileOpen = window.innerWidth >= 1280" style="display: none">
             {foreach $navbar->topNavbar() as $item}
                 {varType array $dropdown}
                 {var $inDropdown = count(array_filter($item['dropdown'] ?: [], fn($dropdown) => $dropdown['link'] === $currentUri)) !== 0}

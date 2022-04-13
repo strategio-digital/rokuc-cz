@@ -12,6 +12,10 @@
     {include parent}
 {/block}
 
+{block styles}
+    <link rel="stylesheet" href="{$assets->get('/css/App.css')}">
+{/block}
+
 {block top}
     <div class="fixed w-full z-30">
         {include './components/top-panel.latte'}

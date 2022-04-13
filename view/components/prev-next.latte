@@ -4,6 +4,7 @@
  *}
 
 {varType ContentioSdk\Component\AssetLoader $assets}
+{varType ContentioSdk\Component\Thumbnail\ThumbGen $thumbGen}
 {varType Strategio\Controller\Base\BaseController $controller}
 {varType string $title}
 {varType string $routeName}
@@ -16,9 +17,10 @@
                 <div class="w-full max-w-[100px] max-h-[100px] order-first hidden sm:block">
                     {var $file = current(array_filter($data['prev']['files'], fn(array $file) => $file['cover'] === true))}
                     {if $file && Nette\Utils\Strings::startsWith($file['mimeType'], 'image/')}
-                        <img src="{$file['objectUrl']}" alt="{$data['prev']['title']}" class="w-full h-full object-cover">
+                        {var $thumb = $thumbGen->create($file['filePath'], 100, 100)}
+                        <img loading="lazy" class="w-full h-full object-cover" alt="{$data['prev']['title']}" src="{$thumb->getSrc()}" width="{$thumb->getWidth()}" height="{$thumb->getHeight()}">
                     {else}
-                        <img src="https://dummyimage.com/300x250" alt="{$data['prev']['title']}" class="w-full h-full object-cover">
+                        <img src="https://dummyimage.com/100x100" alt="{$data['prev']['title']}" class="w-full h-full object-cover">
                     {/if}
                 </div>
                 <div class="w-full">
@@ -35,9 +37,10 @@
                 <div class="w-full max-w-[100px] max-h-[100px] lg:order-last hidden sm:block">
                     {var $file = current(array_filter($data['next']['files'], fn(array $file) => $file['cover'] === true))}
                     {if $file && Nette\Utils\Strings::startsWith($file['mimeType'], 'image/')}
-                        <img src="{$file['objectUrl']}" alt="{$data['next']['title']}" class="w-full h-full object-cover">
+                        {var $thumb = $thumbGen->create($file['filePath'], 100, 100)}
+                        <img loading="lazy" class="w-full h-full object-cover" alt="{$data['next']['title']}" src="{$thumb->getSrc()}" width="{$thumb->getWidth()}" height="{$thumb->getHeight()}">
                     {else}
-                        <img src="https://dummyimage.com/300x250" alt="{$data['next']['title']}" class="w-full h-full object-cover">
+                        <img src="https://dummyimage.com/100x100" alt="{$data['next']['title']}" class="w-full h-full object-cover">
                     {/if}
                 </div>
                 <div class="w-full">

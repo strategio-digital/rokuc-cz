@@ -7,7 +7,7 @@ export default () => {
     Array.from(document.querySelectorAll('[data-smooth-scroll]')).forEach(node => node.addEventListener('click', (event) => {
         const href = node.getAttribute('href') as string;
 
-        if (!href.includes('#')) {
+        if (!href.includes('#') || href === '#') {
             return 0;
         }
 

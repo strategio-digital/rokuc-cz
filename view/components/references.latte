@@ -4,6 +4,7 @@
  *}
 
 {varType ContentioSdk\Component\AssetLoader $assets}
+{varType ContentioSdk\Component\Thumbnail\ThumbGen $thumbGen}
 {varType Strategio\Controller\Base\BaseController $controller}
 {varType array $data}
 
@@ -13,7 +14,8 @@
             {var $file = current(array_filter($item['files'], fn(array $file) => $file['cover'] === true))}
             <div class="relative bg-gray-50 p-6 block">
                 {if $file && Nette\Utils\Strings::startsWith($file['mimeType'], 'image/')}
-                    <img src="{$file['objectUrl']}" alt="{$item['title']}">
+                    {var $thumb = $thumbGen->create($file['filePath'], 400, 300)}
+                    <img loading="lazy" alt="{$item['title']}" src="{$thumb->getSrc()}" width="{$thumb->getWidth()}" height="{$thumb->getHeight()}">
                 {else}
                     <img src="https://dummyimage.com/400x300" alt="{$item['title']}">
                 {/if}

@@ -4,6 +4,7 @@
  *}
 
 {varType ContentioSdk\Component\AssetLoader $assets}
+{varType ContentioSdk\Component\Thumbnail\ThumbGen $thumbGen}
 {varType Strategio\Controller\Base\BaseController $controller}
 {varType array $data}
 {varType array $files}
@@ -23,10 +24,12 @@
         </div>
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 lg:gap-7 mt-10 lg:mt-16 justify-center" data-gallery-container>
             {foreach $files as $file}
-                <a href="{$file['objectUrl']}" class="max-w-[400px] sm:max-w-full" title="{$file['description'] ?: ' '}">
+                {var $thumbBig = $thumbGen->create($file['filePath'], 1440, null, 'SHRINK_ONLY')}
+                {var $thumbSmall = $thumbGen->create($file['filePath'], 400, 300)}
+
+                <a href="{$thumbBig->getSrc()}" class="max-w-[400px] sm:max-w-full" title="{$file['description'] ?: ' '}">
                     <div class="relative bg-gray-50 p-3 sm:p-6">
-                        {* 400x300 *}
-                        <img src="{$file['objectUrl']}" alt="{$file['description']}">
+                        <img loading="lazy" alt="{$file['description']}" src="{$thumbSmall->getSrc()}" width="{$thumbSmall->getWidth()}" height="{$thumbSmall->getHeight()}">
                     </div>
                 </a>
             {/foreach}

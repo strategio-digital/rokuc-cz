@@ -19,6 +19,7 @@
 
         <div class="flex justify-center items-center mt-10 lg:mt-16">
             <button class="bg-rose-700 text-white py-12 px-4 w-12 hover:bg-rose-800 flex justify-center rounded-tl-md rounded-bl-md" id="videoSlider-prev">
+                <span class="sr-only">Prev</span>
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
                 </svg>
@@ -28,13 +29,14 @@
                     {foreach $data['videos']['items'] as $item}
                         <div n:if="$item['videoLink']">
                             <div class="aspect-w-16 aspect-h-9">
-                                <iframe src="https://www.youtube.com/embed/{$item['videoLink']|replace:'https://youtu.be/'}" frameborder="0" allow="clipboard-write; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+                                <iframe title="{$item['title']}" loading="lazy" src="https://www.youtube.com/embed/{$item['videoLink']|replace:'https://youtu.be/'}" frameborder="0" allow="clipboard-write; encrypted-media; picture-in-picture" allowfullscreen></iframe>
                             </div>
                         </div>
                     {/foreach}
                 </div>
             </div>
             <button class="bg-rose-700 text-white py-12 px-4 w-12 hover:bg-rose-800 flex justify-center rounded-tr-md rounded-br-md" id="videoSlider-next">
+                <span class="sr-only">Next</span>
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
                 </svg>

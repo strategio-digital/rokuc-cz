@@ -46,12 +46,12 @@ class NavbarDataset
                 'link' => '#',
                 'dropdown' => [
                     [
-                        'name' => 'Lokalizace netěsnostní',
+                        'name' => 'Lokalizace netěsností',
                         'link' => $this->generator->generate('service_detail', ['slug' => 'lokalizace-netesnosti'])
                     ],
                     [
-                        'name' => 'Oprava netěsností a další služby',
-                        'link' => $this->generator->generate('service_detail', ['slug' => 'oprava-netesnosti-a-dalsi-sluzby'])
+                        'name' => 'Oprava netěsností a další servis',
+                        'link' => $this->generator->generate('service_detail', ['slug' => 'oprava-netesnosti-a-dalsi-servis'])
                     ],
                     [
                         'name' => 'Zjišťování vlhkosti v plochých střechách',

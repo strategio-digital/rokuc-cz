@@ -4,6 +4,7 @@
  *}
 
 {varType ContentioSdk\Component\AssetLoader $assets}
+{varType ContentioSdk\Component\Thumbnail\ThumbGen $thumbGen}
 {varType Strategio\Controller\Base\BaseController $controller}
 {varType array $data}
 
@@ -15,13 +16,21 @@
 
         <div n:if="$paragraph['videoLink']" class="rounded-lg overflow-hidden border-[1px] border-gray-300">
             <div class="aspect-w-16 aspect-h-9">
-                <iframe src="https://www.youtube.com/embed/{$paragraph['videoLink']|replace:'https://youtu.be/'}" frameborder="0" allow="clipboard-write; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+                <iframe loading="lazy" src="https://www.youtube.com/embed/{$paragraph['videoLink']|replace:'https://youtu.be/'}" frameborder="0" allow="clipboard-write; encrypted-media; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
 
         {foreach $paragraph['files'] as $file}
             <figure n:if="Nette\Utils\Strings::startsWith($file['mimeType'], 'image/')">
-                <img class="w-full rounded-lg" src="{$file['objectUrl']}" alt="{$file['description']}">
+                {var $thumb = $thumbGen->create($file['filePath'], 800, null, 'SHRINK_ONLY')}
+                <img loading="lazy"
+                     class="w-full rounded-lg"
+                     alt="{$file['description']}"
+                     src="{$thumb->getSrc()}"
+                     width="{$thumb->getWidth()}"
+                     height="{$thumb->getHeight()}"
+                     id="{Nette\Utils\Strings::webalize($file['name'])}"
+                >
                 <figcaption n:if="$file['description']">{$file['description']}</figcaption>
             </figure>
         {/foreach}

@@ -4,6 +4,7 @@
  *}
 
 {varType ContentioSdk\Component\AssetLoader $assets}
+{varType ContentioSdk\Component\Thumbnail\ThumbGen $thumbGen}
 {varType Strategio\Controller\HomeController $controller}
 {varType array $data}
 
@@ -13,11 +14,10 @@
             <div class="absolute bg-blue-light h-full w-full right-[-20px] bottom-[-20px]"></div>
             {var $file = current(array_filter($data['about_me']['item']['files'], fn(array $file) => $file['cover'] === true))}
             {if $file && Nette\Utils\Strings::startsWith($file['mimeType'], 'image/')}
-                <img width="625" height="445" alt="{$data['about_me']['item']['title']}" class="relative"
-                     data-img-path="{$file['filePath']}" data-img-params='{"method": "EXACT", "quality": 80, "size": {"width": 625, "height": 445}}'
-                >
+                {var $thumb = $thumbGen->create($file['filePath'], 625, 445)}
+                <img class="relative" alt="{$data['about_me']['item']['title']}" src="{$thumb->getSrc()}" width="{$thumb->getWidth()}" height="{$thumb->getHeight()}" loading="lazy">
             {else}
-                <img src="https://dummyimage.com/625x445" alt="{$data['about_me']['item']['title']}" class="relative">
+                <img src="https://dummyimage.com/625x445" alt="{$data['about_me']['item']['title']}" class="relative" loading="lazy">
             {/if}
         </div>
         <div class="md:w-1/2 md:pl-10 lg:pl-16">

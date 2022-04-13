@@ -8,6 +8,7 @@ declare(strict_types=1);
 namespace Strategio\Controller\Base;
 
 use ContentioSdk\Component\AssetLoader;
+use ContentioSdk\Component\Thumbnail\ThumbGen;
 use ContentioSdk\Debugger\ApiDebugger;
 use Latte\Engine;
 use Strategio\Model\ContactDataset;
@@ -23,6 +24,7 @@ class BaseController extends \ContentioSdk\Controller\Base\BaseController
         protected ApiDebugger    $apiDebugger,
         protected Response       $response,
         protected AssetLoader    $assetLoader,
+        protected ThumbGen       $thumbGen,
         protected UrlGenerator   $urlGenerator,
         protected NavbarDataset  $navbarDataset,
         protected ContactDataset $contactDataset,
