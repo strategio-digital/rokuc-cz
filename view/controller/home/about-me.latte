@@ -15,7 +15,14 @@
             {var $file = current(array_filter($data['about_me']['item']['files'], fn(array $file) => $file['cover'] === true))}
             {if $file && Nette\Utils\Strings::startsWith($file['mimeType'], 'image/')}
                 {var $thumb = $thumbGen->create($file['filePath'], 625, 445)}
-                <img class="relative" alt="{$data['about_me']['item']['title']}" src="{$thumb->getSrc()}" width="{$thumb->getWidth()}" height="{$thumb->getHeight()}" loading="lazy">
+                <img class="relative"
+                     id="{$file['name']|webalize}"
+                     alt="{$data['about_me']['item']['title']}"
+                     src="{$thumb->getSrc()}"
+                     width="{$thumb->getWidth()}"
+                     height="{$thumb->getHeight()}"
+                     loading="lazy"
+                >
             {else}
                 <img src="https://dummyimage.com/625x445" alt="{$data['about_me']['item']['title']}" class="relative" loading="lazy">
             {/if}

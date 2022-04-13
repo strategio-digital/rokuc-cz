@@ -18,7 +18,14 @@
                     {var $file = current(array_filter($data['prev']['files'], fn(array $file) => $file['cover'] === true))}
                     {if $file && Nette\Utils\Strings::startsWith($file['mimeType'], 'image/')}
                         {var $thumb = $thumbGen->create($file['filePath'], 100, 100)}
-                        <img loading="lazy" class="w-full h-full object-cover" alt="{$data['prev']['title']}" src="{$thumb->getSrc()}" width="{$thumb->getWidth()}" height="{$thumb->getHeight()}">
+                        <img class="w-full h-full object-cover"
+                             id="{$file['name']|webalize}"
+                             alt="{$data['prev']['title']}"
+                             src="{$thumb->getSrc()}"
+                             width="{$thumb->getWidth()}"
+                             height="{$thumb->getHeight()}"
+                             loading="lazy"
+                        >
                     {else}
                         <img src="https://dummyimage.com/100x100" alt="{$data['prev']['title']}" class="w-full h-full object-cover">
                     {/if}
@@ -38,7 +45,14 @@
                     {var $file = current(array_filter($data['next']['files'], fn(array $file) => $file['cover'] === true))}
                     {if $file && Nette\Utils\Strings::startsWith($file['mimeType'], 'image/')}
                         {var $thumb = $thumbGen->create($file['filePath'], 100, 100)}
-                        <img loading="lazy" class="w-full h-full object-cover" alt="{$data['next']['title']}" src="{$thumb->getSrc()}" width="{$thumb->getWidth()}" height="{$thumb->getHeight()}">
+                        <img class="w-full h-full object-cover"
+                             id="{$file['name']|webalize}"
+                             alt="{$data['next']['title']}"
+                             src="{$thumb->getSrc()}"
+                             width="{$thumb->getWidth()}"
+                             height="{$thumb->getHeight()}"
+                             loading="lazy"
+                        >
                     {else}
                         <img src="https://dummyimage.com/100x100" alt="{$data['next']['title']}" class="w-full h-full object-cover">
                     {/if}

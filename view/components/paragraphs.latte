@@ -16,20 +16,20 @@
 
         <div n:if="$paragraph['videoLink']" class="rounded-lg overflow-hidden border-[1px] border-gray-300">
             <div class="aspect-w-16 aspect-h-9">
-                <iframe loading="lazy" src="https://www.youtube.com/embed/{$paragraph['videoLink']|replace:'https://youtu.be/'}" frameborder="0" allow="clipboard-write; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+                <iframe loading="lazy" title="{$paragraph['title']}" src="https://www.youtube.com/embed/{$paragraph['videoLink']|replace:'https://youtu.be/'}" frameborder="0" allow="clipboard-write; encrypted-media; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
 
         {foreach $paragraph['files'] as $file}
             <figure n:if="Nette\Utils\Strings::startsWith($file['mimeType'], 'image/')">
                 {var $thumb = $thumbGen->create($file['filePath'], 800, null, 'SHRINK_ONLY')}
-                <img loading="lazy"
-                     class="w-full rounded-lg"
+                <img class="w-full rounded-lg"
+                     id="{$file['name']|webalize}"
                      alt="{$file['description']}"
                      src="{$thumb->getSrc()}"
                      width="{$thumb->getWidth()}"
                      height="{$thumb->getHeight()}"
-                     id="{Nette\Utils\Strings::webalize($file['name'])}"
+                     loading="lazy"
                 >
                 <figcaption n:if="$file['description']">{$file['description']}</figcaption>
             </figure>

@@ -35,7 +35,13 @@
                         <a href="{$controller->link('news_detail', ['slug' => $item['slug']])}" class="relative bg-gray-50 p-6 block">
                             {if $file && Nette\Utils\Strings::startsWith($file['mimeType'], 'image/')}
                                 {var $thumb = $thumbGen->create($file['filePath'], 400, 300)}
-                                <img loading="lazy" alt="{$item['title']}" src="{$thumb->getSrc()}" width="{$thumb->getWidth()}" height="{$thumb->getHeight()}">
+                                <img id="{$file['name']|webalize}"
+                                     alt="{$item['title']}"
+                                     src="{$thumb->getSrc()}"
+                                     width="{$thumb->getWidth()}"
+                                     height="{$thumb->getHeight()}"
+                                     loading="lazy"
+                                >
                             {else}
                                 <img src="https://dummyimage.com/400x300" alt="{$item['title']}">
                             {/if}

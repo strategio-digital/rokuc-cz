@@ -35,7 +35,13 @@
                         {var $file = current(array_filter($item['files'], fn(array $file) => $file['cover'] === true))}
                         {if $file && Nette\Utils\Strings::startsWith($file['mimeType'], 'image/')}
                             {var $thumb = $thumbGen->create($file['filePath'], 600, 500)}
-                            <img loading="lazy" alt="{$item['title']}" src="{$thumb->getSrc()}" width="{$thumb->getWidth()}" height="{$thumb->getHeight()}">
+                            <img id="{$file['name']|webalize}"
+                                 alt="{$item['title']}"
+                                 src="{$thumb->getSrc()}"
+                                 width="{$thumb->getWidth()}"
+                                 height="{$thumb->getHeight()}"
+                                 loading="lazy"
+                            >
                         {else}
                             <img src="https://dummyimage.com/600x500" alt="{$item['title']}">
                         {/if}
