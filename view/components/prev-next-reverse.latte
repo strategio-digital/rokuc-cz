@@ -15,36 +15,10 @@
 
 <div class="container mx-auto px-4 mb-10 lg:mb-16">
     <div class="flex flex-col lg:flex-row justify-between gap-5">
-        {if $prev}
-            <a href="{$controller->link($routeName, ['slug' => $prev['slug']])}" class="relative bg-gray-100 p-6 lg:max-w-[450px] w-full flex items-center gap-x-5 text-blue-dark hover:text-rose-800">
-                <div class="w-full max-w-[100px] max-h-[100px] order-first hidden sm:block">
-                    {var $file = current(array_filter($prev['files'], fn(array $file) => $file['cover'] === true))}
-                    {if $file && Nette\Utils\Strings::startsWith($file['mimeType'], 'image/')}
-                        {var $thumb = $thumbGen->create($file['filePath'], 100, 100)}
-                        <img class="w-full h-full object-cover"
-                             id="{$file['name']|webalize}"
-                             alt="{$prev['title']}"
-                             src="{$thumb->getSrc()}"
-                             width="{$thumb->getWidth()}"
-                             height="{$thumb->getHeight()}"
-                             loading="lazy"
-                        >
-                    {else}
-                        <img src="https://dummyimage.com/100x100" alt="{$prev['title']}" class="w-full h-full object-cover">
-                    {/if}
-                </div>
-                <div class="w-full">
-                    <div class="text-sm mb-1 text-gray-500">Předchozí {$title}</div>
-                    <div class="text-lg font-bold">{$prev['title']}</div>
-                </div>
-            </a>
-        {else}
-            <span></span>
-        {/if}
 
         {if $next}
             <a href="{$controller->link($routeName, ['slug' => $next['slug']])}" class="relative bg-gray-100 p-6 lg:max-w-[450px] w-full flex items-center gap-x-5 text-blue-dark hover:text-rose-800">
-                <div class="w-full max-w-[100px] max-h-[100px] lg:order-last hidden sm:block">
+                <div class="w-full max-w-[100px] max-h-[100px] hidden sm:block">
                     {var $file = current(array_filter($next['files'], fn(array $file) => $file['cover'] === true))}
                     {if $file && Nette\Utils\Strings::startsWith($file['mimeType'], 'image/')}
                         {var $thumb = $thumbGen->create($file['filePath'], 100, 100)}
@@ -61,8 +35,35 @@
                     {/if}
                 </div>
                 <div class="w-full">
-                    <div class="text-sm mb-1 text-gray-500">Další {$title}</div>
+                    <div class="text-sm mb-1 text-gray-500">Předchozí {$title}</div>
                     <div class="text-lg font-bold">{$next['title']}</div>
+                </div>
+            </a>
+        {else}
+            <span></span>
+        {/if}
+
+        {if $prev}
+            <a href="{$controller->link($routeName, ['slug' => $prev['slug']])}" class="relative bg-gray-100 p-6 lg:max-w-[450px] w-full flex items-center gap-x-5 text-blue-dark hover:text-rose-800">
+                <div class="w-full max-w-[100px] max-h-[100px] order-first lg:order-last hidden sm:block">
+                    {var $file = current(array_filter($prev['files'], fn(array $file) => $file['cover'] === true))}
+                    {if $file && Nette\Utils\Strings::startsWith($file['mimeType'], 'image/')}
+                        {var $thumb = $thumbGen->create($file['filePath'], 100, 100)}
+                        <img class="w-full h-full object-cover"
+                             id="{$file['name']|webalize}"
+                             alt="{$prev['title']}"
+                             src="{$thumb->getSrc()}"
+                             width="{$thumb->getWidth()}"
+                             height="{$thumb->getHeight()}"
+                             loading="lazy"
+                        >
+                    {else}
+                        <img src="https://dummyimage.com/100x100" alt="{$prev['title']}" class="w-full h-full object-cover">
+                    {/if}
+                </div>
+                <div class="w-full">
+                    <div class="text-sm mb-1 text-gray-500">Další {$title}</div>
+                    <div class="text-lg font-bold">{$prev['title']}</div>
                 </div>
             </a>
         {else}
