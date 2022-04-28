@@ -66,7 +66,7 @@ class NavbarDataset
                         'link' => $this->generator->generate('service_detail', ['slug' => 'kontrola-remeslneho-provedeni'])
                     ],
                     [
-                        'name' => 'Měření úniku tepla termokamerou z dronu',
+                        'name' => 'Měření úniku tepla termokamerou z dronu a ručně',
                         'link' => $this->generator->generate('service_detail', ['slug' => 'mereni-uniku-tepla-termokamerou-z-dronu-a-rucne'])
                     ],
                     [
