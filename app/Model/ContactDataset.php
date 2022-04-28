@@ -22,7 +22,7 @@ class ContactDataset
             'facebook' => 'fb.com/znalecrokuc',
             'youtube' => 'https://youtube.com/channel/UCmB_VRh-_Lid_v_ypmoHS6A',
             'google_maps' => 'https://goo.gl/maps/cfPs4VgMUgN2',
-            'mapy_cz' => 'https://en.mapy.cz/s/3qcRt',
+            'mapy_cz' => 'https://mapy.cz/s/gosonofocu',
             'id' => '12906590',
             'vat_id' => 'CZ7102101721',
             'bank_account' => '296468947/0300'

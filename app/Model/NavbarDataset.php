@@ -67,7 +67,7 @@ class NavbarDataset
                     ],
                     [
                         'name' => 'Měření úniku tepla termokamerou z dronu',
-                        'link' => $this->generator->generate('service_detail', ['slug' => 'mereni-uniku-tepla-termokamerou-z-dronu'])
+                        'link' => $this->generator->generate('service_detail', ['slug' => 'mereni-uniku-tepla-termokamerou-z-dronu-a-rucne'])
                     ],
                     [
                         'name' => 'Správa a údržba plochých střech',
