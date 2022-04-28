@@ -14,11 +14,13 @@
 
         {$paragraph['description']|noescape}
 
-        <div n:if="$paragraph['videoLink']" class="rounded-lg overflow-hidden border-[1px] border-gray-300">
-            <div class="aspect-w-16 aspect-h-9">
-                <iframe loading="lazy" title="{$paragraph['title']}" src="https://www.youtube.com/embed/{$paragraph['videoLink']|replace:'https://youtu.be/'}" frameborder="0" allow="clipboard-write; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+        <figure n:if="$paragraph['videoLink']">
+            <div class="rounded-lg overflow-hidden border-[1px] border-gray-300">
+                <div class="aspect-w-16 aspect-h-9">
+                    <iframe loading="lazy" title="{$paragraph['title']}" src="https://www.youtube.com/embed/{$paragraph['videoLink']|replace:'https://youtu.be/'}" frameborder="0" allow="clipboard-write; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+                </div>
             </div>
-        </div>
+        </figure>
 
         {foreach $paragraph['files'] as $file}
             <figure n:if="Nette\Utils\Strings::startsWith($file['mimeType'], 'image/')">
