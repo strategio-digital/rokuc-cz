@@ -6,7 +6,6 @@
 import ThumbGen from "../../vendor/strategio/contentio-sdk/assets/typescript/Components/ThumbGen";
 import Alpine from "../../vendor/strategio/contentio-sdk/assets/typescript/Plugins/Alpine";
 import FormValidator from "../../vendor/strategio/contentio-sdk/assets/typescript/Utils/FormValidator";
-import Measurement from "../../vendor/strategio/contentio-sdk/assets/typescript/Components/Measurement";
 import SubscribeForm from "../../vendor/strategio/contentio-sdk/assets/typescript/Components/SubscribeForm";
 import ContactForm from "../../vendor/strategio/contentio-sdk/assets/typescript/Components/ContactForm";
 import VideoSlider from "./components/VideoSlider";
@@ -17,9 +16,6 @@ import lgThumbnail from 'lightgallery/plugins/thumbnail';
 (() => {
     // Alpine
     Alpine();
-
-    // GTM
-    Measurement();
 
     // Slider
     VideoSlider();

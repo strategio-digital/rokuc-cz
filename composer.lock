@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fac1d044a3dad52d6823eb4419b3bc23",
+    "content-hash": "c41a44ae2d4e0dea995064362ad297e5",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -331,16 +331,16 @@
         },
         {
             "name": "latte/latte",
-            "version": "v2.11.1",
+            "version": "v2.11.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/latte.git",
-                "reference": "21316b42fb0a4e43df01f73c55d52bd531823fda"
+                "reference": "2e21dbadb2ceae296a51d59d2f336f722b52caf7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/latte/zipball/21316b42fb0a4e43df01f73c55d52bd531823fda",
-                "reference": "21316b42fb0a4e43df01f73c55d52bd531823fda",
+                "url": "https://api.github.com/repos/nette/latte/zipball/2e21dbadb2ceae296a51d59d2f336f722b52caf7",
+                "reference": "2e21dbadb2ceae296a51d59d2f336f722b52caf7",
                 "shasum": ""
             },
             "require": {
@@ -353,9 +353,9 @@
             },
             "require-dev": {
                 "nette/php-generator": "^3.3.4",
-                "nette/tester": "~2.0",
+                "nette/tester": "^2.0",
                 "nette/utils": "^3.0",
-                "phpstan/phpstan": "^0.12",
+                "phpstan/phpstan": "^1",
                 "tracy/tracy": "^2.3"
             },
             "suggest": {
@@ -409,9 +409,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nette/latte/issues",
-                "source": "https://github.com/nette/latte/tree/v2.11.1"
+                "source": "https://github.com/nette/latte/tree/v2.11.2"
             },
-            "time": "2022-04-07T13:21:53+00:00"
+            "time": "2022-04-20T00:12:51+00:00"
         },
         {
             "name": "nette/di",
@@ -1111,16 +1111,16 @@
         },
         {
             "name": "strategio/contentio-sdk",
-            "version": "v0.0.7",
+            "version": "v0.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/strategio-digital/contentio-sdk.git",
-                "reference": "e03089f7e64c4abb44138cfa67ec695f563881db"
+                "reference": "f6ee38ffd25ff615683145e276589f566a686c88"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/strategio-digital/contentio-sdk/zipball/e03089f7e64c4abb44138cfa67ec695f563881db",
-                "reference": "e03089f7e64c4abb44138cfa67ec695f563881db",
+                "url": "https://api.github.com/repos/strategio-digital/contentio-sdk/zipball/f6ee38ffd25ff615683145e276589f566a686c88",
+                "reference": "f6ee38ffd25ff615683145e276589f566a686c88",
                 "shasum": ""
             },
             "require": {
@@ -1157,9 +1157,9 @@
             "description": "PHP SDK for Contentio CRM websites",
             "support": {
                 "issues": "https://github.com/strategio-digital/contentio-sdk/issues",
-                "source": "https://github.com/strategio-digital/contentio-sdk/tree/v0.0.7"
+                "source": "https://github.com/strategio-digital/contentio-sdk/tree/v0.0.8"
             },
-            "time": "2022-04-13T10:53:27+00:00"
+            "time": "2022-05-02T18:12:36+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
@@ -1300,16 +1300,16 @@
         },
         {
             "name": "symfony/http-foundation",
-            "version": "v6.0.7",
+            "version": "v6.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-foundation.git",
-                "reference": "c816b26f03b6902dba79b352c84a17f53d815f0d"
+                "reference": "c9c86b02d7ef6f44f3154acc7de42831518afe7c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/c816b26f03b6902dba79b352c84a17f53d815f0d",
-                "reference": "c816b26f03b6902dba79b352c84a17f53d815f0d",
+                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/c9c86b02d7ef6f44f3154acc7de42831518afe7c",
+                "reference": "c9c86b02d7ef6f44f3154acc7de42831518afe7c",
                 "shasum": ""
             },
             "require": {
@@ -1352,7 +1352,7 @@
             "description": "Defines an object-oriented layer for the HTTP specification",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/http-foundation/tree/v6.0.7"
+                "source": "https://github.com/symfony/http-foundation/tree/v6.0.8"
             },
             "funding": [
                 {
@@ -1368,7 +1368,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-03-24T14:13:59+00:00"
+            "time": "2022-04-22T08:18:02+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -1455,16 +1455,16 @@
         },
         {
             "name": "symfony/routing",
-            "version": "v6.0.5",
+            "version": "v6.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/routing.git",
-                "reference": "a738b152426ac7fcb94bdab8188264652238bef1"
+                "reference": "74c40c9fc334acc601a32fcf4274e74fb3bac11e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/routing/zipball/a738b152426ac7fcb94bdab8188264652238bef1",
-                "reference": "a738b152426ac7fcb94bdab8188264652238bef1",
+                "url": "https://api.github.com/repos/symfony/routing/zipball/74c40c9fc334acc601a32fcf4274e74fb3bac11e",
+                "reference": "74c40c9fc334acc601a32fcf4274e74fb3bac11e",
                 "shasum": ""
             },
             "require": {
@@ -1523,7 +1523,7 @@
                 "url"
             ],
             "support": {
-                "source": "https://github.com/symfony/routing/tree/v6.0.5"
+                "source": "https://github.com/symfony/routing/tree/v6.0.8"
             },
             "funding": [
                 {
@@ -1539,20 +1539,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-01-31T19:46:53+00:00"
+            "time": "2022-04-22T08:18:02+00:00"
         },
         {
             "name": "tracy/tracy",
-            "version": "v2.9.1",
+            "version": "v2.9.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/tracy.git",
-                "reference": "4180b3221ff852fe10d5eab30d80be6f6ab7221e"
+                "reference": "03965a7cb94d284dbf7e3b788b3691715c13d401"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/tracy/zipball/4180b3221ff852fe10d5eab30d80be6f6ab7221e",
-                "reference": "4180b3221ff852fe10d5eab30d80be6f6ab7221e",
+                "url": "https://api.github.com/repos/nette/tracy/zipball/03965a7cb94d284dbf7e3b788b3691715c13d401",
+                "reference": "03965a7cb94d284dbf7e3b788b3691715c13d401",
                 "shasum": ""
             },
             "require": {
@@ -1611,24 +1611,24 @@
             ],
             "support": {
                 "issues": "https://github.com/nette/tracy/issues",
-                "source": "https://github.com/nette/tracy/tree/v2.9.1"
+                "source": "https://github.com/nette/tracy/tree/v2.9.2"
             },
-            "time": "2022-02-15T16:38:30+00:00"
+            "time": "2022-04-28T04:03:34+00:00"
         }
     ],
     "packages-dev": [
         {
             "name": "phpstan/phpstan",
-            "version": "1.5.4",
+            "version": "1.6.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "bbf68cae24f6dc023c607ea0f87da55dd9d55c2b"
+                "reference": "e4cd0c2dd97809fcfdcd1f367ccf0be86c235168"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/bbf68cae24f6dc023c607ea0f87da55dd9d55c2b",
-                "reference": "bbf68cae24f6dc023c607ea0f87da55dd9d55c2b",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/e4cd0c2dd97809fcfdcd1f367ccf0be86c235168",
+                "reference": "e4cd0c2dd97809fcfdcd1f367ccf0be86c235168",
                 "shasum": ""
             },
             "require": {
@@ -1654,7 +1654,7 @@
             "description": "PHPStan - PHP Static Analysis Tool",
             "support": {
                 "issues": "https://github.com/phpstan/phpstan/issues",
-                "source": "https://github.com/phpstan/phpstan/tree/1.5.4"
+                "source": "https://github.com/phpstan/phpstan/tree/1.6.4"
             },
             "funding": [
                 {
@@ -1674,7 +1674,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-04-03T12:39:00+00:00"
+            "time": "2022-05-02T16:02:21+00:00"
         }
     ],
     "aliases": [],

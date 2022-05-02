@@ -13,7 +13,7 @@
     "require": {
         "php": "^8.1",
         "ext-json": "*",
-        "strategio/contentio-sdk": "^0.0.7"
+        "strategio/contentio-sdk": "v0.0.8"
     },
     "autoload": {
         "psr-4": {
