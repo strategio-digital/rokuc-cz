@@ -18,7 +18,8 @@
     <div class="container mx-auto px-4 xl:flex justify-between items-center">
         <div class="flex justify-between items-center">
             <a href="{$controller->link('home')}" class="block">
-                <img src="{$assets->get('/img/rokuc-logo-gold.svg')}" width="214" height="60" class="w-auto h-[30px] xl:h-[60px] py-1" alt="Roman Kučera">
+                <img src="{$assets->get('/img/logo-kucera-gold-xl.svg')}" width="214" height="60" class="hidden xl:block" alt="Roman Kučera">
+                <img src="{$assets->get('/img/logo-kucera-gold-sm.svg')}" width="107" height="30" class="xl:hidden" alt="Roman Kučera">
             </a>
             <button class="text-white hover:text-gold-light transition duration-150 ease-out hover:ease-in flex xl:hidden" @click="mobileOpen = !mobileOpen">
                 <span class="mr-2">menu</span>
