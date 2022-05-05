@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9e16aa1e05c01ee7a095bca3b1eb32bc",
+    "content-hash": "e62e0470f0e75bb4bbe56b5dc9a5294d",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -1111,16 +1111,16 @@
         },
         {
             "name": "strategio/contentio-sdk",
-            "version": "v0.0.9",
+            "version": "v0.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/strategio-digital/contentio-sdk.git",
-                "reference": "2927f76286cbdf51ffb5866f510a74000761e8c4"
+                "reference": "d97a7a6396d1f30af427619b0467e55fe5a08a2a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/strategio-digital/contentio-sdk/zipball/2927f76286cbdf51ffb5866f510a74000761e8c4",
-                "reference": "2927f76286cbdf51ffb5866f510a74000761e8c4",
+                "url": "https://api.github.com/repos/strategio-digital/contentio-sdk/zipball/d97a7a6396d1f30af427619b0467e55fe5a08a2a",
+                "reference": "d97a7a6396d1f30af427619b0467e55fe5a08a2a",
                 "shasum": ""
             },
             "require": {
@@ -1157,9 +1157,9 @@
             "description": "PHP SDK for Contentio CRM websites",
             "support": {
                 "issues": "https://github.com/strategio-digital/contentio-sdk/issues",
-                "source": "https://github.com/strategio-digital/contentio-sdk/tree/v0.0.9"
+                "source": "https://github.com/strategio-digital/contentio-sdk/tree/v0.0.11"
             },
-            "time": "2022-05-04T16:56:09+00:00"
+            "time": "2022-05-05T08:13:05+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
@@ -1619,16 +1619,16 @@
     "packages-dev": [
         {
             "name": "phpstan/phpstan",
-            "version": "1.6.5",
+            "version": "1.6.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "462f7651f3454f280d6a397be3290634ab937022"
+                "reference": "d41c39cb2e487663bce9bbd97c660e244b73abad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/462f7651f3454f280d6a397be3290634ab937022",
-                "reference": "462f7651f3454f280d6a397be3290634ab937022",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/d41c39cb2e487663bce9bbd97c660e244b73abad",
+                "reference": "d41c39cb2e487663bce9bbd97c660e244b73abad",
                 "shasum": ""
             },
             "require": {
@@ -1654,7 +1654,7 @@
             "description": "PHPStan - PHP Static Analysis Tool",
             "support": {
                 "issues": "https://github.com/phpstan/phpstan/issues",
-                "source": "https://github.com/phpstan/phpstan/tree/1.6.5"
+                "source": "https://github.com/phpstan/phpstan/tree/1.6.7"
             },
             "funding": [
                 {
@@ -1674,7 +1674,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-05-04T10:49:26+00:00"
+            "time": "2022-05-04T22:55:41+00:00"
         }
     ],
     "aliases": [],
