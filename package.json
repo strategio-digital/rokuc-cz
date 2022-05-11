@@ -2,7 +2,7 @@
     "name": "contentio-shop",
     "license": "UNLICENSED",
     "dependencies": {
-        "contentio-app-deps": "0.0.3",
+        "contentio-app-deps": "0.0.4",
         "lightgallery": "^2.4.0",
         "tiny-slider": "^2.9.4"
     },

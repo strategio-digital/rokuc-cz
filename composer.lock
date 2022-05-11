@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e62e0470f0e75bb4bbe56b5dc9a5294d",
+    "content-hash": "d70929b9f663288d95cdee99c22dfcc5",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -331,16 +331,16 @@
         },
         {
             "name": "latte/latte",
-            "version": "v2.11.2",
+            "version": "v2.11.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/latte.git",
-                "reference": "2e21dbadb2ceae296a51d59d2f336f722b52caf7"
+                "reference": "f2e16d3ec6968854029740452c20c38a514e6842"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/latte/zipball/2e21dbadb2ceae296a51d59d2f336f722b52caf7",
-                "reference": "2e21dbadb2ceae296a51d59d2f336f722b52caf7",
+                "url": "https://api.github.com/repos/nette/latte/zipball/f2e16d3ec6968854029740452c20c38a514e6842",
+                "reference": "f2e16d3ec6968854029740452c20c38a514e6842",
                 "shasum": ""
             },
             "require": {
@@ -409,9 +409,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nette/latte/issues",
-                "source": "https://github.com/nette/latte/tree/v2.11.2"
+                "source": "https://github.com/nette/latte/tree/v2.11.3"
             },
-            "time": "2022-04-20T00:12:51+00:00"
+            "time": "2022-05-08T03:22:55+00:00"
         },
         {
             "name": "nette/di",
@@ -1111,16 +1111,16 @@
         },
         {
             "name": "strategio/contentio-sdk",
-            "version": "v0.0.11",
+            "version": "v0.0.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/strategio-digital/contentio-sdk.git",
-                "reference": "d97a7a6396d1f30af427619b0467e55fe5a08a2a"
+                "reference": "89a917818fc81a571fdaa4a1303235e5f8e7fb0b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/strategio-digital/contentio-sdk/zipball/d97a7a6396d1f30af427619b0467e55fe5a08a2a",
-                "reference": "d97a7a6396d1f30af427619b0467e55fe5a08a2a",
+                "url": "https://api.github.com/repos/strategio-digital/contentio-sdk/zipball/89a917818fc81a571fdaa4a1303235e5f8e7fb0b",
+                "reference": "89a917818fc81a571fdaa4a1303235e5f8e7fb0b",
                 "shasum": ""
             },
             "require": {
@@ -1157,9 +1157,9 @@
             "description": "PHP SDK for Contentio CRM websites",
             "support": {
                 "issues": "https://github.com/strategio-digital/contentio-sdk/issues",
-                "source": "https://github.com/strategio-digital/contentio-sdk/tree/v0.0.11"
+                "source": "https://github.com/strategio-digital/contentio-sdk/tree/v0.0.12"
             },
-            "time": "2022-05-05T08:13:05+00:00"
+            "time": "2022-05-10T21:37:23+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
@@ -1619,16 +1619,16 @@
     "packages-dev": [
         {
             "name": "phpstan/phpstan",
-            "version": "1.6.7",
+            "version": "1.6.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "d41c39cb2e487663bce9bbd97c660e244b73abad"
+                "reference": "d76498c5531232cb8386ceb6004f7e013138d3ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/d41c39cb2e487663bce9bbd97c660e244b73abad",
-                "reference": "d41c39cb2e487663bce9bbd97c660e244b73abad",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/d76498c5531232cb8386ceb6004f7e013138d3ba",
+                "reference": "d76498c5531232cb8386ceb6004f7e013138d3ba",
                 "shasum": ""
             },
             "require": {
@@ -1654,7 +1654,7 @@
             "description": "PHPStan - PHP Static Analysis Tool",
             "support": {
                 "issues": "https://github.com/phpstan/phpstan/issues",
-                "source": "https://github.com/phpstan/phpstan/tree/1.6.7"
+                "source": "https://github.com/phpstan/phpstan/tree/1.6.8"
             },
             "funding": [
                 {
@@ -1674,7 +1674,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-05-04T22:55:41+00:00"
+            "time": "2022-05-10T06:54:21+00:00"
         }
     ],
     "aliases": [],

@@ -8,6 +8,7 @@ import Alpine from "../../vendor/strategio/contentio-sdk/assets/typescript/Plugi
 import FormValidator from "../../vendor/strategio/contentio-sdk/assets/typescript/Utils/FormValidator";
 import SubscribeForm from "../../vendor/strategio/contentio-sdk/assets/typescript/Components/SubscribeForm";
 import ContactForm from "../../vendor/strategio/contentio-sdk/assets/typescript/Components/ContactForm";
+import CookieConsent from "../../vendor/strategio/contentio-sdk/assets/typescript/Plugins/CookieConsent";
 import VideoSlider from "./components/VideoSlider";
 import SmoothScroll from "./components/SmoothScroll";
 import lightGallery from 'lightgallery';
@@ -22,6 +23,9 @@ import lgThumbnail from 'lightgallery/plugins/thumbnail';
 
     // Scroll
     SmoothScroll();
+
+    // CookieConsent
+    CookieConsent();
 
     // Light gallery
     const galleryContainer = document.querySelector('[data-gallery-container]');
