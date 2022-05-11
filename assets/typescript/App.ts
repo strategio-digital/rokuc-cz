@@ -3,22 +3,20 @@
  * @author Jiří Zapletal (https://strategio.digital, jz@strategio.digital)
  */
 
+import ThumbGen from "../../vendor/strategio/contentio-sdk/assets/typescript/Components/ThumbGen";
 import Alpine from "../../vendor/strategio/contentio-sdk/assets/typescript/Plugins/Alpine";
 import FormValidator from "../../vendor/strategio/contentio-sdk/assets/typescript/Utils/FormValidator";
-import Measurement from "../../vendor/strategio/contentio-sdk/assets/typescript/Components/Measurement";
 import SubscribeForm from "../../vendor/strategio/contentio-sdk/assets/typescript/Components/SubscribeForm";
 import ContactForm from "../../vendor/strategio/contentio-sdk/assets/typescript/Components/ContactForm";
+import CookieConsent from "../../vendor/strategio/contentio-sdk/assets/typescript/Plugins/CookieConsent";
 import VideoSlider from "./components/VideoSlider";
 import SmoothScroll from "./components/SmoothScroll";
 import lightGallery from 'lightgallery';
-import lgThumbnail from 'lightgallery/plugins/thumbnail'
+import lgThumbnail from 'lightgallery/plugins/thumbnail';
 
 (() => {
     // Alpine
     Alpine();
-
-    // GTM
-    Measurement();
 
     // Slider
     VideoSlider();
@@ -26,14 +24,35 @@ import lgThumbnail from 'lightgallery/plugins/thumbnail'
     // Scroll
     SmoothScroll();
 
+    // CookieConsent
+    CookieConsent();
+
     // Light gallery
-    (Array.from(document.querySelectorAll('[data-gallery-container]')) as HTMLElement[]).forEach(node => {
-        lightGallery(node, {
+    const galleryContainer = document.querySelector('[data-gallery-container]');
+    let onThumbnailCreate = null;
+
+    if (galleryContainer) {
+        const lg = lightGallery(galleryContainer as HTMLElement, {
             plugins: [lgThumbnail],
             licenseKey: 'your_license_key',
             speed: 300,
         });
-    })
+
+        onThumbnailCreate = (params: any, src: string) => {
+            const index = lg.index;
+            const items = lg.getItems();
+            if (items.filter(item => item.src === src).length > 0) {
+                lg.updateSlides(items, index);
+            }
+        }
+    }
+
+    // Thumbnail generator
+    if (onThumbnailCreate) {
+        ThumbGen(onThumbnailCreate);
+    } else {
+        ThumbGen();
+    }
 
     // Form validator
     const formValidator = FormValidator({

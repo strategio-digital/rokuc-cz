@@ -4,6 +4,7 @@
  *}
 
 {varType ContentioSdk\Component\AssetLoader $assets}
+{varType ContentioSdk\Component\Thumbnail\ThumbGen $thumbGen}
 {varType Strategio\Controller\NewsController $controller}
 {varType array $data}
 
@@ -33,7 +34,14 @@
 
                         <a href="{$controller->link('news_detail', ['slug' => $item['slug']])}" class="relative bg-gray-50 p-6 block">
                             {if $file && Nette\Utils\Strings::startsWith($file['mimeType'], 'image/')}
-                                <img src="{$file['objectUrl']}" alt="{$item['title']}">
+                                {var $thumb = $thumbGen->create($file['filePath'], 400, 300)}
+                                <img id="{$file['name']|webalize}"
+                                     alt="{$item['title']}"
+                                     src="{$thumb->getSrc()}"
+                                     width="{$thumb->getWidth()}"
+                                     height="{$thumb->getHeight()}"
+                                     loading="lazy"
+                                >
                             {else}
                                 <img src="https://dummyimage.com/400x300" alt="{$item['title']}">
                             {/if}

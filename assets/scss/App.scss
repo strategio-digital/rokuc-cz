@@ -6,6 +6,8 @@
 $lg-path-fonts: "/temp/static/font";
 $lg-path-images: "/temp/static/img";
 
+@import "vendor/strategio/contentio-sdk/assets/scss/App";
+
 @import "lightgallery/scss/lightgallery";
 @import "lightgallery/scss/lg-variables";
 @import "lightgallery/scss/lg-mixins";
@@ -13,5 +15,3 @@ $lg-path-images: "/temp/static/img";
 @import "lightgallery/scss/lg-theme-default";
 @import "lightgallery/scss/lg-thumbnail";
 @import "lightgallery/scss/lightgallery-core";
-
-

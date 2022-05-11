@@ -17,7 +17,7 @@
                 <div class="prose prose-indigo text-gray-500">
                     {$data['item']['panelDescription']|noescape}
                 </div>
-                <a href="#kontakt" data-smooth-scroll class="btn-red mt-10 w-full text-center">
+                <a href="#kontakt" data-smooth-scroll n:class="'btn-red w-full text-center', $data['item']['panelDescription'] ? 'mt-10'">
                     Poptávkový formulář
                 </a>
             </div>

@@ -4,6 +4,7 @@
  *}
 
 {varType ContentioSdk\Component\AssetLoader $assets}
+{varType ContentioSdk\Component\Thumbnail\ThumbGen $thumbGen}
 {varType Strategio\Controller\HomeController $controller}
 {varType array $data}
 
@@ -23,7 +24,15 @@
                     <a href="{$controller->link('service_detail', ['slug' => $item['slug']])}" class="block text-blue-light hover:text-rose-800">
                         {var $file = current(array_filter($item['files'], fn(array $file) => $file['cover'] === true))}
                         {if $file && Nette\Utils\Strings::startsWith($file['mimeType'], 'image/')}
-                            <img src="{$file['objectUrl']}" alt="{$item['title']}" class="rounded-full absolute top-[-35px] w-[70px] h-[70px]">
+                            {var $thumb = $thumbGen->create($file['filePath'], 70, 70)}
+                            <img class="rounded-full absolute top-[-35px] w-[70px] h-[70px]"
+                                 id="{$file['name']|webalize}"
+                                 alt="{$item['title']}"
+                                 src="{$thumb->getSrc()}"
+                                 width="{$thumb->getWidth()}"
+                                 height="{$thumb->getHeight()}"
+                                 loading="lazy"
+                            >
                         {else}
                             <img src="https://dummyimage.com/70" alt="{$item['title']}" class="rounded-full absolute top-[-35px]">
                         {/if}

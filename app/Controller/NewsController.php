@@ -53,7 +53,7 @@ class NewsController extends BaseController
             'json' => [
                 'slug' => $slug,
                 'suppressLabels' => true,
-                'suppressFiles' => true,
+                'suppressFiles' => false,
                 'suppressParagraphs' => false,
                 'suppressParagraphFiles' => false,
                 'suppressPrevNext' => false,

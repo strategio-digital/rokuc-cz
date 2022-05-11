@@ -12,7 +12,8 @@
         <form id="subscribeForm" data-v-group class="w-full max-w-[400px]">
             <div data-v-alerts class="mb-3 hidden"></div>
             <div class="flex md:mt-0 text-right">
-                <input type="email" name="email" id="email" class="rounded-tl-lg rounded-bl-lg block w-full border-gray-300 placeholder-gray-300 focus:outline-none sm:text-sm pr-3">
+                <label for="newsletter-email" class="sr-only">E-mail</label>
+                <input type="email" name="email" id="newsletter-email" class="rounded-tl-lg rounded-bl-lg block w-full border-gray-300 placeholder-gray-300 focus:outline-none sm:text-sm pr-3">
                 <button type="submit" class="rounded-br-lg rounded-tr-lg inline-block bg-rose-700 border-2 border-rose-700 px-5 text-white duration-150 hover:bg-rose-800 focus:outline-none disabled:bg-gray-500 disabled:border-gray-500">Odebírat&nbsp;novinky</button>
             </div>
             <p class="mt-1 text-sm text-red-600 hidden" data-v-message></p>

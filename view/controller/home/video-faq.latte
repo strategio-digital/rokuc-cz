@@ -19,6 +19,7 @@
 
         <div class="flex justify-center items-center mt-10 lg:mt-16">
             <button class="bg-rose-700 text-white py-12 px-4 w-12 hover:bg-rose-800 flex justify-center rounded-tl-md rounded-bl-md" id="videoSlider-prev">
+                <span class="sr-only">Prev</span>
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
                 </svg>
@@ -28,13 +29,26 @@
                     {foreach $data['videos']['items'] as $item}
                         <div n:if="$item['videoLink']">
                             <div class="aspect-w-16 aspect-h-9">
-                                <iframe src="https://www.youtube.com/embed/{$item['videoLink']|replace:'https://youtu.be/'}" frameborder="0" allow="clipboard-write; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+                                <div class="absolute flex inset-0 justify-center items-center">
+                                    <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-red-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                    </svg>
+                                    <span class="text-sm text-gray-400">
+                                        Video se načítá...
+                                    </span>
+                                </div>
+                                <iframe loading="lazy"
+                                        title="{$item['title']}" src="https://www.youtube.com/embed/{$item['videoLink']|replace:'https://youtu.be/'}"
+                                        frameborder="0" allow="clipboard-write; encrypted-media; picture-in-picture" allowfullscreen>
+                                </iframe>
                             </div>
                         </div>
                     {/foreach}
                 </div>
             </div>
             <button class="bg-rose-700 text-white py-12 px-4 w-12 hover:bg-rose-800 flex justify-center rounded-tr-md rounded-br-md" id="videoSlider-next">
+                <span class="sr-only">Next</span>
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
                 </svg>

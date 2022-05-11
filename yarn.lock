@@ -2376,10 +2376,10 @@ content-type@~1.0.4:
   resolved "https://registry.yarnpkg.com/content-type/-/content-type-1.0.4.tgz#e138cc75e040c727b1966fe5e5f8c9aee256fe3b"
   integrity sha512-hIP3EEPs8tB9AT1L+NUqtwOAps4mk2Zob89MWXMHjHWg9milF/j4osnnQLXBCBFBk/tvIG/tUc9mOUJiPBhPXA==
 
-contentio-app-deps@0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/contentio-app-deps/-/contentio-app-deps-0.0.3.tgz#d3f8b25f680b8840643e5a3e56c9fe136f813bcf"
-  integrity sha512-qPENe+rzf9wr8UOqgOtPfl5xO+Vad5NoXBXqzkcPkXxu29MLmkh2gR61Dx1y6W0We2yOdhzJmMkS4EgbrE1Xgw==
+contentio-app-deps@0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/contentio-app-deps/-/contentio-app-deps-0.0.4.tgz#244ae6ceae6b2afed611292f3d9420202a55ec1e"
+  integrity sha512-fe4P78gI13ctM8SYOEH4Ud5ebw9sncg12W357C7dasCkhoB4SsdEQqdgIZghgKe6O+OdVfaAqBWAP4aauOv06Q==
   dependencies:
     "@tailwindcss/aspect-ratio" "^0.4.0"
     "@tailwindcss/forms" "^0.4.0"
@@ -2401,6 +2401,7 @@ contentio-app-deps@0.0.3:
     tailwindcss "^3.0.15"
     ts-loader "^9.2.6"
     typescript "^4.4.4"
+    vanilla-cookieconsent "^2.8.0"
     vue-loader "^16.8.2"
     webpack "^5.60.0"
 
@@ -6222,6 +6223,11 @@ uuid@^8.3.0, uuid@^8.3.2:
   version "8.3.2"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
   integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
+
+vanilla-cookieconsent@^2.8.0:
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/vanilla-cookieconsent/-/vanilla-cookieconsent-2.8.0.tgz#651bc9de2517571afb4ef72075d0200ec30ce343"
+  integrity sha512-ouffZlaEkrGBvYJtYt1p4tB4IQ9gdw1dZR+yJmlTjpA14PUKCWpx9gblWeujpwD5OjXI0/aWHb0M0wdYd2uJ2g==
 
 vary@~1.1.2:
   version "1.1.2"

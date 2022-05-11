@@ -4,6 +4,7 @@
  *}
 
 {varType ContentioSdk\Component\AssetLoader $assets}
+{varType ContentioSdk\Component\Thumbnail\ThumbGen $thumbGen}
 {varType Strategio\Controller\HomeController $controller}
 {varType array $data}
 
@@ -11,7 +12,20 @@
     <div class="flex flex-wrap">
         <div class="md:w-1/2 relative mb-5 mr-[20px] md:mr-0">
             <div class="absolute bg-blue-light h-full w-full right-[-20px] bottom-[-20px]"></div>
-            <img class="relative" src="{$assets->get('/img/about-me-photo.jpg')}" alt="Roman Kučera">
+            {var $file = current(array_filter($data['about_me']['item']['files'], fn(array $file) => $file['cover'] === true))}
+            {if $file && Nette\Utils\Strings::startsWith($file['mimeType'], 'image/')}
+                {var $thumb = $thumbGen->create($file['filePath'], 625, 445)}
+                <img class="relative"
+                     id="{$file['name']|webalize}"
+                     alt="{$data['about_me']['item']['title']}"
+                     src="{$thumb->getSrc()}"
+                     width="{$thumb->getWidth()}"
+                     height="{$thumb->getHeight()}"
+                     loading="lazy"
+                >
+            {else}
+                <img src="https://dummyimage.com/625x445" alt="{$data['about_me']['item']['title']}" class="relative" loading="lazy">
+            {/if}
         </div>
         <div class="md:w-1/2 md:pl-10 lg:pl-16">
             <h2 class="font-serif text-3xl mb-5 mt-8 md:mt-0">O mně</h2>
@@ -22,7 +36,7 @@
                 <a class="btn-gold-outline mr-3" href="{$controller->link('news_detail', ['slug' => $data['about_me']['item']['slug']])}">
                     <span class="hidden sm:inline">Více o</span> <span class="sm:hidden">O</span> mně
                 </a>
-                <a  href="#kontakt" data-smooth-scroll class="btn-red mt-4 sm:mt-0">
+                <a href="#kontakt" data-smooth-scroll class="btn-red mt-4 sm:mt-0">
                     Konzultovat řešení
                 </a>
             </div>
