@@ -1,5 +1,5 @@
 # Rokuc.cz
-Frontend for contentio.app REST API
+Frontend for rokuc.cz website based on Contentio-SDK
 
 ## Installation guide
 1. `cp .env.example .env`
