@@ -17,7 +17,6 @@ use Strategio\Controller\Base\BaseController;
 use Strategio\Model\ContactDataset;
 use Strategio\Model\HeroSection;
 use Strategio\Model\NavbarDataset;
-use Symfony\Component\HttpFoundation\Cookie;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Generator\UrlGenerator;
