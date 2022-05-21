@@ -3,3 +3,4 @@ services:
 
     - Strategio\Model\NavbarDataset
     - Strategio\Model\ContactDataset
+    - Strategio\Model\HeroSection
