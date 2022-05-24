@@ -25,7 +25,8 @@ class NavbarDataset
             ['name' => 'O mně', 'link' => $this->generator->generate('about_me')],
             ['name' => 'Aktuality', 'link' => $this->generator->generate('news_list_home')],
             ['name' => 'Reference', 'link' => $this->generator->generate('reference_list_home')],
-            ['name' => 'Kontakt', 'link' => '#kontakt']
+            ['name' => 'Kontakt', 'link' => '#kontakt'],
+            ['name' => 'GDPR', 'link' => $this->generator->generate('article_detail', ['slug' => 'gdpr'])],
         ];
     }
     

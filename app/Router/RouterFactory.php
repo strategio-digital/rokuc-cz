@@ -9,6 +9,7 @@ namespace Strategio\Router;
 
 use ContentioSdk\Router\BaseRouter;
 use Strategio\Controller\AboutMeController;
+use Strategio\Controller\ArticleController;
 use Strategio\Controller\HomeController;
 use Strategio\Controller\NewsController;
 use Strategio\Controller\ProcessController;
@@ -39,6 +40,7 @@ class RouterFactory extends BaseRouter
         $this->add('technology_detail', '/technologie/{slug}', [TechnologyController::class, 'detail']);
     
         $this->add('process_detail', '/prubeh-a-uzitecne-informace/{slug}', [ProcessController::class, 'detail']);
+        $this->add('article_detail', '/clanky/{slug}', [ArticleController::class, 'detail']);
         
         return $routes;
     }
