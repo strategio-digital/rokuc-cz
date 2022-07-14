@@ -18,7 +18,7 @@ class ContactDataset
         $data = [
             'mail' => 'roman@rokuc.cz',
             'phone' => '+420 603 258 686',
-            'address' => 'Chlebov 60, 329 01 Soběslav',
+            'address' => 'Chlebov 60, 392 01 Soběslav',
             'facebook' => 'fb.com/znalecrokuc',
             'youtube' => 'https://youtube.com/channel/UCmB_VRh-_Lid_v_ypmoHS6A',
             'google_maps' => 'https://goo.gl/maps/cfPs4VgMUgN2',
