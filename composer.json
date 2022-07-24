@@ -24,6 +24,13 @@
         "phpstan/phpstan": "^1.5.4"
     },
     "scripts": {
-        "phpstan": "vendor/bin/phpstan analyse -l 8 app --memory-limit 1G"
+        "phpstan": "vendor/bin/phpstan analyse -l 8 app --memory-limit 1G",
+        "latte": "vendor/bin/latte-lint view",
+        "neon": "vendor/bin/neon-lint config",
+        "analyse": [
+            "vendor/bin/phpstan analyse -l 8 app --memory-limit 1G",
+            "vendor/bin/latte-lint view",
+            "vendor/bin/neon-lint config"
+        ]
     }
 }

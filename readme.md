@@ -6,6 +6,6 @@ Frontend for rokuc.cz website based on Contentio-SDK
 2. `./project.sh serve --stop-others`
 3. `./project.sh app`
 5. `composer i`
-6. `composer phpstan`
+6. `composer analyse`
 4. `yarn && yarn dev`
 7. [http://localhost:8080](http://localhost:8080)
